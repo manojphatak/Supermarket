@@ -3,8 +3,16 @@
 class BillReport {
 public:
   void show(){
+    string Name;
+    cin >> "Game Name: " >> Name; 
     Games Gamesobj;
-    Gamesobj.setProductYear(5);
+    Gameobj.setProductYear(5);
     std::cout << Gamesobj.getProductYear();
+  }
+  void set(){
+    string GameName, BrandName;
+    cin >> "\nGame Name: " >> GameName;
+    Games Gameobj;
+    Gameobj.setProductYear(GameName);
   }
 }; 
