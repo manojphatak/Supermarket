@@ -1,5 +1,5 @@
-#include "./Postgres/setup.hpp"
-#include "./Postgres/tablesetup.hpp"
+#include "Postgres/setup.hpp"
+#include "Postgres/tablesetup.hpp"
 
 class Games{
 private:
