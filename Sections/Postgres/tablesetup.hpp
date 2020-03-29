@@ -18,10 +18,10 @@ public:
       
       W.exec( sql );
       W.commit();
-      cout << "Table created successfully" << endl;
+      std::cout << "Table created successfully" << endl;
       C.disconnect ();
     } catch (const std::exception &e) {
-      cerr << e.what() << std::endl;
+      std::cerr << e.what() << std::endl;
       return 1;
     }
     return 0;

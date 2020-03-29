@@ -1,6 +1,9 @@
-#include "Sections/Games.cpp"
+#include "Sections/Games.hpp"
 #include <iostream>
 #include <string>
+
+using namespace std;
+
 class BillReport {
 public:
   void show(){

@@ -1,5 +1,7 @@
 #include <iostream>
-#include "BillReport.cpp"
+#include "BillReport.hpp"
+
+using namespace std;
 
 int main(){
 
@@ -17,7 +19,7 @@ int main(){
     BillReportObj.show();
     break;
   case 2:
-    //Regulation();
+    //Regulations();
     break;
   case 3:
     //ItemDetails();

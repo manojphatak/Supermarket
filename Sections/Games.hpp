@@ -1,6 +1,8 @@
 #include "Postgres/setup.hpp"
 #include "Postgres/tablesetup.hpp"
 
+using namespace std;
+
 class Games{
 private:
   //Item Names,Product Year, Brand Name for Games section.
