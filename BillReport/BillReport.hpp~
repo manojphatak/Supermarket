@@ -1,4 +1,4 @@
-#include "../Sections/Games.hpp"
+#include "Sections/Games.hpp"
 #include <iostream>
 #include <string>
 

@@ -1,5 +1,6 @@
 #include <iostream>
-#include "BillReport.hpp"
+#include "BillReport/BillReport.hpp"
+#include "Regulations/Add.hpp"
 
 using namespace std;
 
@@ -20,6 +21,12 @@ int main(){
     break;
   case 2:
     //Regulations();
+    std::cout << "1.Add the items";
+    std::cin >> itemno;
+    if ( itemno == 1 ){
+      Add addgame;
+      addgame.add()
+    }
     break;
   case 3:
     //ItemDetails();
