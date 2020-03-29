@@ -8,7 +8,7 @@ class PostgresConnection{
 public:
   bool Add(std::string sql){
     try {
-      connection C("dbname = market user = postgres password = TEST hostaddr = 127.0.0.1 port = 5432");
+      connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
       TestofPostgres();
       if (C.is_open()) {
 	work W(C);			// We need to return of C reference
@@ -23,6 +23,7 @@ public:
     }
     return 0;
   }
+
   bool TestofPostgres(){
 
     PostgresSetup Setup;
@@ -30,20 +31,16 @@ public:
       std::cout << "The Database couldn't open.";
       return 0;			// 0 mean false or unsuccesfull.
     }else{
-      std::cout << "The Database opened. \nThe table creating...";
-      GameTableInstall GameTable;
-      if ( GameTable.GamesTableInstallation() != 1 ){
-	std::cout << "The table created succesfully!";
-	return 1;		// 1 mean true
-      }else{
-	return 0;		// 0 mean false
-      }
+      std::cout << "The Database opened. \nThe table creating...\n";
+      // GameTableInstall GameTable;
+      // if ( GameTable.GamesTableInstallation() != 1 ){
+	// std::cout << "The table created succesfully!";
+	// return 1;		// 1 mean true
+      // }else{
+	return 1;		// 0 mean false
+      // }
     }
   }
 
-  string InttoString(int number){
-    ostringstream temp;
-    temp << number;
-    return temp.str();
-  }
+
 };

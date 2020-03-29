@@ -13,7 +13,7 @@ int main(){
   std::cout << "3. Show Item Details\n";
   std::cout << "4. Exit\nPlease Enter Required Option:";
   std::cin >> menuselect;
- 
+
   switch(menuselect) {
   case 1:
     BillReport BillReportObj;
@@ -25,7 +25,7 @@ int main(){
     std::cin >> itemno;
     if ( itemno == 1 ){
       Add addgame;
-      addgame.add()
+      addgame.add();
     }
     break;
   case 3:
@@ -37,6 +37,6 @@ int main(){
   default:
     std::cout << "You didn't choose a number.";
   }
-  
+
   return 0;
 }

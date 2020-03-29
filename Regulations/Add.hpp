@@ -18,11 +18,15 @@ public:
     std::cin >> ProductYear;
     sql = "INSERT INTO Market (PRODUCTNAME,BRANDNAME,PRICE,PRODUCTYEAR) VALUES ('" + GameName + "','" + BrandName  + "','" + InttoString(Price) + "','" + InttoString(ProductYear) +"');";
     PostgresConnection PostgresConn;
-    if ( PostgresConn(sql) == 0 ){
+    if ( PostgresConn.Add(sql) == 0 ){
       std::cout << "The record added successfully!";
 	}else{
       std::cout << "Something Gone Wrong!";
     }
   }
-
+  string InttoString(int number){
+    ostringstream temp;
+    temp << number;
+    return temp.str();
+  }
 };
