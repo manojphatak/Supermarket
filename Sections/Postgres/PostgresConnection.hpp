@@ -9,8 +9,7 @@ public:
   bool Add(std::string sql){
     try {
       connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
-      TestofPostgres();
-      if (C.is_open()) {
+      if (C.is_open() && TestofPostgres() == 1) {
 	work W(C);			// We need to return of C reference
 	W.exec( sql );
 	W.commit();

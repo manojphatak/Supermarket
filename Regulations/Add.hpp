@@ -16,7 +16,7 @@ public:
     std::cin >> Price;
     std::cout << "\nProduct Year: " << std::endl;
     std::cin >> ProductYear;
-    sql = "INSERT INTO Market (PRODUCTNAME,BRANDNAME,PRICE,PRODUCTYEAR) VALUES ('" + GameName + "','" + BrandName  + "','" + InttoString(Price) + "','" + InttoString(ProductYear) +"');";
+    sql = "INSERT INTO games (PRODUCTNAME,BRANDNAME,PRICE,PRODUCTYEAR) VALUES ('" + GameName + "','" + BrandName  + "','" + InttoString(Price) + "','" + InttoString(ProductYear) +"');";
     PostgresConnection PostgresConn;
     if ( PostgresConn.Add(sql) == 0 ){
       std::cout << "The record added successfully!";
