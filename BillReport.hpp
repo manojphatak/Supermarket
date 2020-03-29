@@ -14,11 +14,11 @@ public:
     std::cout << Gamesobj.getProductYear() << std::endl;
   }
   void set(){
-    string GameName = getLine();
-    string BrandName = getLine();
-    //std::cout << "\nGame Name: " << std::endl;
-    //std::cin >> GameName;
+    string GameName, BrandName;
+    int ProductYear, Price;
+    std::cout << "\nPrice: " << std::endl;
+    std::cin >> Price;
     Games Gameobj;
-    Gameobj.setProductYear(GameName);
+    Gameobj.setProductYear(Price);
   }
 }; 

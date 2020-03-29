@@ -1,5 +1,6 @@
 #include "Postgres/setup.hpp"
 #include "Postgres/tablesetup.hpp"
+#include <sstream>
 
 using namespace std;
 
@@ -8,36 +9,34 @@ private:
   //Item Names,Product Year, Brand Name for Games section.
   string GameName, BrandName;
   int ProductYear, Price;
+  
 
 public:  
   string getGameName(){
     return GameName;
   }
-  string setGameName( string NewGameName ){
+  void setGameName( string NewGameName ){
     GameName = NewGameName;
   }
   string getBrandName(){
     return BrandName;
   }
-  string setBrandName( string NewBrandName ){
+  void setBrandName( string NewBrandName ){
     BrandName = NewBrandName;
   }
   int getProductYear(){
     return ProductYear;
   }
-  int setProductYear( int NewProductYear ){
+  void setProductYear( int NewProductYear ){
     ProductYear = NewProductYear;
   }
-  int setPrice( int newPrice ){
+  void setPrice( int newPrice ){
     Price = newPrice;
   }
   int getPrice(){
     return Price;
   }
-};
 
-class PostgresProcess{
-public:
   bool TestofPostgres(){
 
     PostgresSetup Setup;
@@ -57,13 +56,14 @@ public:
   }
 
 
-  void InputforTable(string gamename, string brandname, int productyear){
-    char * sql;
-    sql = "INSERT INTO Market (PRODUCTNAME,PRICE,PRODUCTYEAR) VALUES ('Tomb Raider','25','1999');";
-    int ProductYear = getProductYear();
-    string BrandName = getBrandName();
-    string GameName = getGameName();
-
+  bool InputforTable(string gamename, string brandname, int productyear, int price){
+    string sql;
+    int ProductYear = productyear;
+    string BrandName = brandname;
+    string GameName = gamename;
+    int Price = price;
+    
+    sql = "INSERT INTO Market (PRODUCTNAME,BRANDNAME,PRICE,PRODUCTYEAR) VALUES ('" + GameName + "','" + BrandName  + "','" + InttoString(Price) + "','" + InttoString(ProductYear) +"');";
     try {
       connection C("dbname = market user = postgres password = TEST hostaddr = 127.0.0.1 port = 5432");
       TestofPostgres();     
@@ -76,7 +76,14 @@ public:
       }
     } catch (const std::exception &e) {
       std::cerr << e.what() << std::endl;
-	return 1; 
+      return 1; 
     }
+    return 0;
+  }
+
+  string InttoString(int number){
+    ostringstream temp;
+    temp << number;
+    return temp.str();
   }
 };
