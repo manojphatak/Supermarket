@@ -1,5 +1,11 @@
+#include <pqxx/pqxx> 
+
+using namespace pqxx;
+
 class GameTableInstall {
-  void GamesTableInstallation(){
+public:
+  int GamesTableInstallation(){
+    char * sql;
     try {
       sql = "CREATE TABLE Market("			\
 	"ID INT PRIMARY KEY     NOT NULL,"		\
@@ -18,5 +24,6 @@ class GameTableInstall {
       cerr << e.what() << std::endl;
       return 1;
     }
+    return 0;
   }
 };
