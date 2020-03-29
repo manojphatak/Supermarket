@@ -11,7 +11,7 @@ private:
   int ProductYear, Price;
   
 
-public:  
+public:
   string getGameName(){
     return GameName;
   }
@@ -51,8 +51,8 @@ public:
 	return 1;		// 1 mean true
       }else{
 	return 0;		// 0 mean false
-      }      
-    }    
+      }
+    }
   }
 
 
@@ -62,11 +62,11 @@ public:
     string BrandName = brandname;
     string GameName = gamename;
     int Price = price;
-    
+
     sql = "INSERT INTO Market (PRODUCTNAME,BRANDNAME,PRICE,PRODUCTYEAR) VALUES ('" + GameName + "','" + BrandName  + "','" + InttoString(Price) + "','" + InttoString(ProductYear) +"');";
     try {
       connection C("dbname = market user = postgres password = TEST hostaddr = 127.0.0.1 port = 5432");
-      TestofPostgres();     
+      TestofPostgres();
       if (C.is_open()) {
 	work W(C);			// We need to return of C reference
 	W.exec( sql );
@@ -76,7 +76,7 @@ public:
       }
     } catch (const std::exception &e) {
       std::cerr << e.what() << std::endl;
-      return 1; 
+      return 1;
     }
     return 0;
   }
