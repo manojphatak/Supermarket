@@ -1,6 +1,7 @@
 #include <iostream>
 #include "BillReport/BillReport.hpp"
 #include "Regulations/Add.hpp"
+#include <algorithm>
 
 using namespace std;
 
