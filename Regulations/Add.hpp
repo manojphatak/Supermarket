@@ -8,13 +8,13 @@ public:
     string sql, GameName, BrandName;
     int ProductYear, Price;
     Games Gameobj;
-    std::cout << "\nGame Name: " << std::endl;
+    std::cout << "Game Name: " << std::endl;
     std::cin >> GameName;
-    std::cout << "\nBrand Name: " << std::endl;
+    std::cout << "Brand Name: " << std::endl;
     std::cin >> BrandName;
-    std::cout << "\nPrice: " << std::endl;
+    std::cout << "Price: " << std::endl;
     std::cin >> Price;
-    std::cout << "\nProduct Year: " << std::endl;
+    std::cout << "Product Year: " << std::endl;
     std::cin >> ProductYear;
     sql = "INSERT INTO games (PRODUCTNAME,BRANDNAME,PRICE,PRODUCTYEAR) VALUES ('" + GameName + "','" + BrandName  + "','" + InttoString(Price) + "','" + InttoString(ProductYear) +"');";
     PostgresConnection PostgresConn;

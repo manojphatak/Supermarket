@@ -24,7 +24,6 @@ public:
   }
 
   bool TestofPostgres(){
-
     PostgresSetup Setup;
     if( Setup.PostgresqlSetup() == 1 ){
       std::cout << "The Database couldn't open.";

@@ -20,12 +20,16 @@ int main(){
     BillReportObj.show();
     break;
   case 2:
-    //Regulations();
     std::cout << "1.Add the items";
     std::cin >> itemno;
     if ( itemno == 1 ){
       Add addgame;
-      addgame.add();
+      std::string YorN = "Y";
+      while ( YorN == "Y" ){
+        addgame.add();
+        std::cout << "\nWill you add more gmae records? Y/N" << std::endl;
+        std::cin >> YorN;
+      }
     }
     break;
   case 3:
