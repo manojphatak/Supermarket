@@ -6,7 +6,8 @@ class Add{
 public:
   void add(){
     string sql, GameName, BrandName;
-    int ProductYear, Price;
+    int ProductYear;
+    double Price;
     Games Gameobj;
     std::cout << "Game Name: " << std::endl;
     std::cin >> GameName;

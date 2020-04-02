@@ -4,8 +4,6 @@
 #include "Details/Show.hpp"
 #include <algorithm>
 
-using namespace std;
-
 int main(){
 
   int itemno=0,menuselect=0;

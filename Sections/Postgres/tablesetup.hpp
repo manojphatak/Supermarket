@@ -18,7 +18,7 @@ public:
 	"ID SERIAL PRIMARY KEY     NOT NULL,"		\
 	"PRODUCTNAME           CHAR(50)    NOT NULL,"	\
 	"BRANDNAME        CHAR(50)    NOT NULL,"		\
-	"PRICE        INT     NOT NULL,"			\
+	"PRICE        DOUBLE     NOT NULL,"			\
 	"PRODUCTYEAR            INT     NOT NULL);";
   connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
   if (C.is_open()) {

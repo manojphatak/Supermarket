@@ -8,13 +8,6 @@ using namespace std;
 class PostgresConnection{
 public:
 
-  void Conn(){
-    connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
-    if (C.is_open() && TestofPostgres() == 1) {
-      std::cout << "Opened database successfully: " << C.dbname() << '\n';
-    }
-  }
-
   bool Add( string sql ){
     try {
       connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
