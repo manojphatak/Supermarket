@@ -1,6 +1,7 @@
 #include <iostream>
 #include "BillReport/BillReport.hpp"
 #include "Regulations/Add.hpp"
+#include "Details/Show.hpp"
 #include <algorithm>
 
 using namespace std;
@@ -16,11 +17,12 @@ int main(){
   std::cin >> menuselect;
 
   switch(menuselect) {
-  case 1:
+  case 1: {
     BillReport BillReportObj;
     BillReportObj.show();
     break;
-  case 2:
+  }
+  case 2: {
     std::cout << "1.Add the items";
     std::cin >> itemno;
     if ( itemno == 1 ){
@@ -33,14 +35,27 @@ int main(){
       }
     }
     break;
+  }
   case 3:
-    //ItemDetails();
+  {
+    string ProductName;
+    Show show;
+    std::cout << "You need to give name of the product name: ";
+    std::cin >> ProductName;
+    if ( show.getDetails(ProductName) == "SUCCESS" ){
+      return 1;
+    }else{
+      return 0;
+    }
     break;
-  case 4:
+  }
+  case 4: {
     std::cout << "The program killed.";
     return 0;
-  default:
+  }
+  default: {
     std::cout << "You didn't choose a number.";
+  }
   }
 
   return 0;
