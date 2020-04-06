@@ -1,8 +1,9 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 #include "BillReport/BillReport.hpp"
 #include "Regulations/Add.hpp"
 #include "Details/Show.hpp"
-#include <algorithm>
 
 int main(){
 
@@ -17,14 +18,14 @@ int main(){
   switch(menuselect) {
   case 1: {
     BillReport BillReportObj;
-    BillReportObj.show();
+    std::cout << BillReportObj.show() << std::endl;
     break;
   }
   case 2: {
     std::cout << "1.Add the items";
     std::cin >> itemno;
     if ( itemno == 1 ){
-      Add addgame;
+      AddofRecord addgame;
       std::string YorN = "Y";
       while ( YorN == "Y" ){
         addgame.add();

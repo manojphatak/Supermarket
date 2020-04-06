@@ -24,7 +24,33 @@ public:
     }
     return 0;
   }
+ 
+private:
+  double Show ( string nameofsection ){
 
+      string sql = "SELECT SUM(PRICE) FROM " + nameofsection;
+      try{
+      	connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+      	if (C.is_open() ) {
+        	std::cout << "Opened database successfully: " << C.dbname() << '\n';
+      	}	
+      	nontransaction N(C);
+      	result R( N.exec( sql ));
+	for (result::const_iterator c = R.begin(); c != R.end(); ++c) {
+		return c[0].as<float>();
+	}
+      	C.disconnect ();
+    	} catch ( const exception &e ) {
+		std::cerr << e.what() <<  std::endl;
+      	}
+  }
+public:
+  double getShow( string nameofsection ){
+	  return Show(nameofsection);
+  }
+
+
+ public:
   bool TestofPostgres(){
     PostgresSetup Setup;
     if( Setup.PostgresqlSetup() == 1 ){

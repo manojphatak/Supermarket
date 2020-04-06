@@ -1,8 +1,7 @@
-#include "../Sections/Games.hpp"
-#include "../Sections/Postgres/PostgresConnection.hpp"
 #include <sstream>
+#include "../Sections/Games.hpp"
 
-class Add{
+class AddofRecord{
 public:
   void add(){
     string sql, GameName, BrandName;
