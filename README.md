@@ -45,3 +45,9 @@ Market -----/                          \  ProductYear /
                \--------> Toys
 
 ```
+
+
+# The Issues:
+
+1. [] All sql queries must be change for **Supermarket** database.
+2. [] The bill report should have strings. The function just return integer.
