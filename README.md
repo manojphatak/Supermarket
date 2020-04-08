@@ -5,16 +5,26 @@ The program using on management office so they can give input the system. The re
 
 ## Installation:
 
-The first necessary PostgreSQL-11 and libpqxx library for PostgreSQL connection so you need to be apply this code in Debian systems:
+The first necessary PostgreSQL-11 and libpqxx library for PostgreSQL connection. You can follow these instructions for install postgreSQL. You need to be apply this code for install the libpqxx library in Debian and Redhatsystems:
 
 ```
-sudo apt install libpqxx-6.2 libpqxx-dev
+sudo apt install libpqxx-6.2 libpqxx-dev   ## For Debian
+sudo dnf install libpqxx-6.2 libpqxx-dev   ## For Fedora or Centos 8
+sudo yum install libpqxx-6.2 libpqxx-dev   ## For Centos 7 or before
 ```
 
 This packages in this repository *http://deb.debian.org/debian buster/main amd64.*
 
-Compile the program:
+The Postgresql setup is like this:
 
+```
+create user employee with password test;
+grant NOLOGIN, NOCREATEROLE, NOSUPERUSER on database "supermarket" to employee;
+create database Supermarket owner employee;
+```
+
+
+You can compile right now. I used c++2a standarts. The g++/gcc should be up version of 8:
 
 ```
 g++ main.cpp -std=c++2a -lpqxx -lpq
@@ -25,13 +35,13 @@ g++ main.cpp -std=c++2a -lpqxx -lpq
 
 ```
 	          
-			   /-------> Groceries      /------------\
-			  /                        /  ProductName \
-	         /-------> Games ----------   BrandName
+	       /-------> Groceries      /------------\
+	      /                        /  ProductName \
+	     /-------> Games ----------   BrandName
 Market -----/                          \  ProductYear /
             \                           \------------/
-			 \-------> Books
-			  \
-			   \--------> Toys
+	     \-------> Books
+	      \
+               \--------> Toys
 
 ```

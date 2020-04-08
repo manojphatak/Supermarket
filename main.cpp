@@ -16,10 +16,11 @@ int main(){
   std::cout << "4. Exit\nPlease Enter Required Option:";
   std::cin >> menuselect;
 
-  //PostgresSetup setupoftables;
-  //if (setupoftables.PostgresqlSetup() != 0 ){
-//	  std::cout << "The tables doensn't create before" 
-  //}
+  PostgresSetup setupoftables;
+  if (setupoftables.PostgresqlSetup() == 0 ){
+	  std::cout << "Bye" << std::endl;
+	  exit(-1); 
+  }
 
 
   switch(menuselect) {
