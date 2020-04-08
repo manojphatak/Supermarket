@@ -4,6 +4,7 @@
 #include "BillReport/BillReport.hpp"
 #include "Regulations/Add.hpp"
 #include "Details/Show.hpp"
+#include "Sections/Postgres/setup.hpp"
 
 int main(){
 
@@ -14,6 +15,12 @@ int main(){
   std::cout << "3. Show Item Details\n";
   std::cout << "4. Exit\nPlease Enter Required Option:";
   std::cin >> menuselect;
+
+  //PostgresSetup setupoftables;
+  //if (setupoftables.PostgresqlSetup() != 0 ){
+//	  std::cout << "The tables doensn't create before" 
+  //}
+
 
   switch(menuselect) {
   case 1: {

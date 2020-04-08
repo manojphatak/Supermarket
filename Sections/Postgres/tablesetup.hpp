@@ -50,7 +50,7 @@ public:
       sql = "CREATE TABLE Garden("			\
 	"ID SERIAL PRIMARY KEY     NOT NULL,"		\
 	"PRODUCTNAME           CHAR(50)    NOT NULL,"	\
-	"BRANDNAME        CHAR(50)    NOT NULL,"	\	
+	"BRANDNAME        CHAR(50)    NOT NULL," 	\
 	"SECTION	CHAR(50)	NOT NULL,"	\
 	"PRICE        DOUBLE     NOT NULL);";
 	connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
@@ -89,15 +89,17 @@ public:
     return 0;
   }
 
-  int ExistTableTest( string tablename ){
+  int ExistTableTest(){	  
+	  std::string nameofsection[4] = {"Games","Books","Toys","Garden"};
+	  for (int i=0;i>=3;i++){
     try {
-      string sql = "SELECT COUNT(*) FROM information_schema.tables WHERE table_name = '" + tablename  + "';";			\
+	    std::string sql = "SELECT COUNT(*) FROM information_schema.tables WHERE table_name = '" + nameofsection[i]+ "';";			
 	connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
   	if (C.is_open()) {
 		work W(C);
 		W.exec( sql );
 		W.commit();
-		std::cout << " Books Records created successfully" << std::endl;
+		std::cout << nameofsection[i] + " Records created successfully" << std::endl;
 		C.disconnect ();
 		return 0;
 	}
@@ -106,5 +108,5 @@ public:
       	return 1;
     }	
   }
-
+  }
 };

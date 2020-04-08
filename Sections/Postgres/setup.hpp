@@ -1,5 +1,5 @@
 #include <pqxx/pqxx>
-
+#include "tablesetup.hpp"
 using namespace pqxx;
 
 class PostgresSetup{
@@ -8,7 +8,7 @@ public:
 	TableInstallForPostgres TableInstall;
 	if ( TableInstall.ExistTableTest() == 0 ){
 		if ( TableInstall.TableRecords() != 1 ){
-			std::cout << "The Tables Created Succesfully!" std::endl;
+			std::cout << "The Tables Created Succesfully!" << std::endl;
 		}
     		try {
       		connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");

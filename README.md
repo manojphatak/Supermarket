@@ -17,7 +17,7 @@ Compile the program:
 
 
 ```
-g++ g++ main.cpp -std=c++2a -lpqxx -lpq
+g++ main.cpp -std=c++2a -lpqxx -lpq
 ```
 
 
