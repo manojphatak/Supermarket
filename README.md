@@ -21,7 +21,7 @@ The Postgresql setup is like this:
 
 ```
 create user employee with password test;
-grant NOLOGIN, NOCREATEROLE, NOSUPERUSER on database "supermarket" to employee;
+grant NOLOGIN, NOCREATEROLE, NOSUPERUSER on database "Supermarket" to employee;
 create database Supermarket owner employee;
 ```
 
@@ -51,5 +51,5 @@ Market -----/                          \  ProductYear /
 
 # The Issues:
 
-1. [] All sql queries must be change for **Supermarket** database.
+1. [+] All sql queries must be change for **Supermarket** database.
 2. [] The bill report should have strings. The function just return integer.

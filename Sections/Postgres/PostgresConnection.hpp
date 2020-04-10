@@ -8,7 +8,7 @@ public:
 
   bool Add ( string sql ){
     try {
-      connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+      connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
       if ( C.is_open() ) {
 	work W(C);			// We need to return of C reference
 	W.exec( sql );
@@ -28,7 +28,7 @@ private:
 
       string sql = "SELECT SUM(PRICE) FROM " + nameofsection;
       try{
-      	connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+      	connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
       	if (C.is_open() ) {
         	std::cout << "Opened database successfully: " << C.dbname() << '\n';
       	}	

@@ -8,6 +8,12 @@
 
 int main(){
 
+  PostgresSetup setupoftables;
+  if (setupoftables.PostgresqlSetup() != 0 ){
+	  std::cout << "Bye" << std::endl;
+	  exit(-1); 
+  }
+
   int itemno=0,menuselect=0;
   std::cout << "\t\t\tSuper Market Billing\t\t\t\n";
   std::cout << "1. Bill Report\n";
@@ -16,12 +22,7 @@ int main(){
   std::cout << "4. Exit\nPlease Enter Required Option:";
   std::cin >> menuselect;
 
-//  PostgresSetup setupoftables;
-//  if (setupoftables.PostgresqlSetup() != 0 ){
-//	  std::cout << "Bye" << std::endl;
-//	  exit(-1); 
-//  }
-//
+
 
   switch(menuselect) {
   case 1: {

@@ -4,7 +4,7 @@ public:
     string sql = "SELECT * FROM Games WHERE PRODUCTNAME = '" + ProductName + "'";
 
     try {
-      connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+      connection C("dbname = Supersupermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
       if ( C.is_open() ) {
         std::cout << "Opened database successfully: " << C.dbname() << '\n';
       }
