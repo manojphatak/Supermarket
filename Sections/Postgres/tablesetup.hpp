@@ -13,7 +13,7 @@ public:
 	"BRANDNAME        CHAR(50)    NOT NULL,"		\
 	"PRICE        DOUBLE     NOT NULL,"			\
 	"PRODUCTYEAR            INT     NOT NULL);";
-	connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+	connection C("dbname = Supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
   	if (C.is_open()) {
 		work W(C);
 		W.exec( sql );
@@ -33,7 +33,7 @@ public:
 	"BRANDNAME        CHAR(50)    NOT NULL,"		\
 	"PRICE        DOUBLE     NOT NULL,"			\
 	"PRODUCTYEAR            INT     NOT NULL);";
-	connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+	connection C("dbname = Supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
   	if (C.is_open()) {
 		work W(C);
 		W.exec( sql );
@@ -53,7 +53,7 @@ public:
 	"BRANDNAME        CHAR(50)    NOT NULL," 	\
 	"SECTION	CHAR(50)	NOT NULL,"	\
 	"PRICE        DOUBLE     NOT NULL);";
-	connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+	connection C("dbname = Supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
   	if (C.is_open()) {
 		work W(C);
 		W.exec( sql );
@@ -74,7 +74,7 @@ public:
 	"PRICE        DOUBLE     NOT NULL,"			\
 	"ISBN	INT(30)	NOT NULL,"		\
 	"PRODUCTYEAR            INT     NOT NULL);";
-	connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+	connection C("dbname = Supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
   	if (C.is_open()) {
 		work W(C);
 		W.exec( sql );
@@ -94,7 +94,7 @@ public:
 	  for (int i=0;i>=3;i++){
     try {
 	    std::string sql = "SELECT COUNT(*) FROM information_schema.tables WHERE table_name = '" + nameofsection[i]+ "';";			
-	connection C("dbname = market user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+	connection C("dbname = Supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
   	if (C.is_open()) {
 		work W(C);
 		W.exec( sql );
