@@ -23,9 +23,11 @@ public:
 			Toys toys;
 			toys.add();
 		}else if ( SectionNumber == 3 ){
-
+			Books books;
+			books.add();
 		}else if ( SectionNumber == 4 ){
-
+			Garden garden;
+			garden.add();
 		}
 	}
 };
