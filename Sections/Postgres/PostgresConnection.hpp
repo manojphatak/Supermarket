@@ -38,9 +38,9 @@ private:
 	}
     	} catch ( const exception &e ) {
 		std::cerr << e.what() <<  std::endl;
-//		return 1;
+		return "FAULT OF DATABASE!!";
       	}
-      return "F";
+      return "Worked Successfully!!";
   }
 
 public:
