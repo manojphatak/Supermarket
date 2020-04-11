@@ -56,6 +56,7 @@ Market -----/                          \  ProductYear /
 3. [+] Prices returned to Money data type.
 4. [+] Tables and database need to check and create automaticly in program.
 5. [+] Libpqxx install with new version. Also update the codes for new version. [pqxx-7.0.0]
-6. [-] The bill report doesn't work.
-7. [-] The other sections need to add in program.
-8. [-] Regualtion items need to has remove and edit choices.
+6. [+] The bill report doesn't work.
+7. [+] The other sections need to add in program.
+8. [+] Regualtion items need to has remove and edit choices.
+9. [-] The bill total calculation doesn't work as I want.
