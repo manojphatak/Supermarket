@@ -1,6 +1,6 @@
 #include <pqxx/pqxx>
 
-using namespace pqxx;
+//using namespace pqxx;
 
 class TableInstallForPostgres {
 public:
@@ -13,12 +13,11 @@ public:
 	"BRANDNAME        CHAR(50)    NOT NULL,"		\
 	"PRICE        MONEY     NOT NULL,"			\
 	"PRODUCTYEAR            INT     NOT NULL);";
-	connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+      pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
 	  if (C.is_open()) {
-		work W(C);
+		  pqxx::work W(C);
 		W.exec( sql );
 		W.commit();
-		C.disconnect ();
 	}
     } catch (const std::exception &e) {
 	    std::cerr << e.what() << std::endl;
@@ -33,12 +32,11 @@ public:
 	"BRANDNAME        CHAR(50)    NOT NULL,"		\
 	"PRICE        MONEY     NOT NULL,"			\
 	"PRODUCTYEAR            INT     NOT NULL);";
-	connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+      pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
 	  if (C.is_open()) {
-		work W(C);
+		  pqxx::work W(C);
 		W.exec( sql );
 		W.commit();
-		C.disconnect ();
 	}
     } catch (const std::exception &e) {
 	    std::cerr << e.what() << std::endl;
@@ -53,12 +51,11 @@ public:
 	"BRANDNAME        CHAR(50)    NOT NULL," 	\
 	"SECTION	CHAR(50)	NOT NULL,"	\
 	"PRICE        MONEY     NOT NULL);";
-	connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+      pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
 	  if (C.is_open()) {
-		work W(C);
+		  pqxx::work W(C);
 		W.exec( sql );
 		W.commit();
-		C.disconnect ();
 	}
     } catch (const std::exception &e) {
 	    std::cerr << e.what() << std::endl;
@@ -74,12 +71,11 @@ public:
 	"PRICE        MONEY     NOT NULL,"			\
 	"ISBN	CHAR(30)	NOT NULL,"		\
 	"PRODUCTYEAR            INT     NOT NULL);";
-	connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+      pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
 	  if (C.is_open()) {
-		work W(C);
+		  pqxx::work W(C);
 		W.exec( sql );
 		W.commit();
-		C.disconnect ();
 	}
     } catch (const std::exception &e) {
 	    std::cerr << e.what() << std::endl;
@@ -93,13 +89,10 @@ public:
 	  for (int i=0; i<4; i++){
 		std::string sql = "SELECT COUNT(*) FROM information_schema.tables WHERE table_name = '" + nameofsection[i]+ "';";
           try{
-        	connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
-        	if (C.is_open() ) {
-          	std::cout << "Opened database successfully: " << C.dbname() << '\n';
-        	}	
-        	nontransaction N(C);
-        	result R( N.exec( sql ));
-  	  	for (result::const_iterator c = R.begin(); c != R.end(); ++c) {
+		  pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+		  pqxx::nontransaction N(C);
+		  pqxx::result R( N.exec( sql ));
+  	  	for (pqxx::result::const_iterator c = R.begin(); c != R.end(); ++c) {
   			if ( 0 == c[0].as<int>() ){
 				if ( nameofsection[i] == "games"){
 					creategamestable();
@@ -114,7 +107,6 @@ public:
 				}
 			}
   	  	}
-        	C.disconnect ();
       	  } catch ( const exception &e ) {
   		std::cerr << e.what() <<  std::endl;
 	  }

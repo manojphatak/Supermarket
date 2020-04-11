@@ -1,8 +1,6 @@
 #include <pqxx/pqxx>
 #include "tablesetup.hpp"
 
-using namespace pqxx;
-using namespace std;
 
 class PostgresSetup{
 public:
@@ -25,18 +23,17 @@ private:
   int CheckofExistedDatabase(){
 	  string sql = "SELECT 1 FROM pg_database WHERE datname='supermarket'";
           try{
-        	connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+		  pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
         	if (C.is_open() ) {
           	std::cout << "Opened database successfully: " << C.dbname() << '\n';
         	}	
-        	nontransaction N(C);
-        	result R( N.exec( sql ));
+		pqxx::nontransaction N(C);
+		pqxx::result R( N.exec( sql ));
 	//for (result::const_iterator c = R.begin(); c != R.end(); ++c) {
 		//return c[0].as<int>();
-		  result::const_iterator c = R.begin();
+		pqxx::result::const_iterator c = R.begin();
 		  return c[0].as<int>();
   	  //}
-        	C.disconnect ();
       	  } catch ( const exception &e ) {
   		std::cerr << e.what() <<  std::endl;
   		return -3;

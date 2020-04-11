@@ -52,4 +52,10 @@ Market -----/                          \  ProductYear /
 # The Issues:
 
 1. [+] All sql queries must be change for **Supermarket** database.
-2. [] The bill report should have strings. The function just return integer.
+2. [+] The bill report should have strings. The function just return integer.
+3. [+] Prices returned to Money data type.
+4. [+] Tables and database need to check and create automaticly in program.
+5. [+] Libpqxx install with new version. Also update the codes for new version. [pqxx-7.0.0]
+6. [-] The bill report doesn't work.
+7. [-] The other sections need to add in program.
+8. [-] Regualtion items need to has remove and edit choices.

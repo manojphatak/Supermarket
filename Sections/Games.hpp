@@ -1,6 +1,3 @@
-
-using namespace std;
-
 class Games{
 private:
   //Item Names,Product Year, Brand Name for Games section.

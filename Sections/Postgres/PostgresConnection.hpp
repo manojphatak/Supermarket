@@ -1,6 +1,5 @@
 #include <pqxx/pqxx>
 
-using namespace pqxx;
 using namespace std;
 
 class PostgresConnection{
@@ -8,13 +7,12 @@ public:
 
   bool Add ( string sql ){
     try {
-      connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+	    pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
       if ( C.is_open() ) {
-	work W(C);			// We need to return of C reference
+	      pqxx::work W(C);			// We need to return of C reference
 	W.exec( sql );
 	W.commit();
 	cout << "The sql command worked successfully!" <<  endl;
-	C.disconnect ();
       }
     } catch (const  exception &e) {
         cerr << e.what() <<  endl;
@@ -28,16 +26,15 @@ private:
 
       string sql = "SELECT SUM(PRICE) FROM " + nameofsection;
       try{
-      	connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
+	      pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
       	if (C.is_open() ) {
         	std::cout << "Opened database successfully: " << C.dbname() << '\n';
       	}	
-      	nontransaction N(C);
-      	result R( N.exec( sql ));
-	for (result::const_iterator c = R.begin(); c != R.end(); ++c) {
+	pqxx::nontransaction N(C);
+	pqxx::result R( N.exec( sql ));
+	for (pqxx::result::const_iterator c = R.begin(); c != R.end(); ++c) {
 		return c[0].as<float>();
 	}
-      	C.disconnect ();
     	} catch ( const exception &e ) {
 		std::cerr << e.what() <<  std::endl;
 		return -1;

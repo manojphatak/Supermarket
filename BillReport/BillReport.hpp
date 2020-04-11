@@ -3,16 +3,16 @@
 class BillReport {
 public:
   float show(){
-	std::string listofSection [3];
-	listofSection[0] = "Games";
-	 listofSection[1] = "Toys";
-	 listofSection[2] = "Garden";
-	 listofSection[3] = "Books";
+	std::string listofSection [4];
+	listofSection[0] = "games";
+	listofSection[1] = "toys";
+	listofSection[2] = "garden";
+	listofSection[3] = "books";
  	float net = 0.00;
-	 for( int i = 0; i <= 3; i++ ){
+	 for( int i = 0; i < 3; i++ ){
 		PostgresConnection record;
-		net += record.getShow("games");
+		net += record.getShow(listofSection[i]);
 	      }
     	return net;
- 	}    
+  }	    
 };
