@@ -47,9 +47,9 @@ int main(){
   switch(menuselect) {
   case 1: {
     BillReport BillReportObj;
-    std::cout << BillReportObj.show() << std::endl;
+    BillReportObj.menuforsection();
     break;
-  }
+  } 
   case 2: {
     std::cout << "1.Add the items";
     std::cin >> itemno;

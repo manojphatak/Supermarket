@@ -12,10 +12,10 @@ public:
 	      pqxx::work W(C);			// We need to return of C reference
 	W.exec( sql );
 	W.commit();
-	cout << "The sql command worked successfully!" <<  endl;
+	std::cout << "The sql command worked successfully!" << std::endl;
       }
     } catch (const  exception &e) {
-        cerr << e.what() <<  endl;
+	    std::cerr << e.what() <<  std::endl;
       return 1;
     }
     return 0;
@@ -25,6 +25,7 @@ private:
   float Show ( string nameofsection ){
 
       string sql = "SELECT SUM(PRICE) FROM " + nameofsection;
+      string::size_type sz;
       try{
 	      pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
       	if (C.is_open() ) {
@@ -37,13 +38,13 @@ private:
 	}
     	} catch ( const exception &e ) {
 		std::cerr << e.what() <<  std::endl;
-		return -1;
+		return 1;
       	}
       return 0;
   }
 
 public:
-  double getShow( string nameofsection ){
+  float getShow( string nameofsection ){
 	  return Show(nameofsection);
   }
 
