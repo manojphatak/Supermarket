@@ -22,7 +22,7 @@ public:
   }
  
 private:
-  float Show ( string nameofsection ){
+  string Show ( string nameofsection ){
 
       string sql = "SELECT SUM(PRICE) FROM " + nameofsection;
       string::size_type sz;
@@ -34,37 +34,17 @@ private:
 	pqxx::nontransaction N(C);
 	pqxx::result R( N.exec( sql ));
 	for (pqxx::result::const_iterator c = R.begin(); c != R.end(); ++c) {
-		return c[0].as<float>();
+		return c[0].as<string>();
 	}
     	} catch ( const exception &e ) {
 		std::cerr << e.what() <<  std::endl;
-		return 1;
+//		return 1;
       	}
-      return 0;
+      return "F";
   }
 
 public:
-  float getShow( string nameofsection ){
+  string getShow( string nameofsection ){
 	  return Show(nameofsection);
   }
-
-
-// public:
-//  bool TestofPostgres(){
-//    PostgresSetup Setup;
-//    if( Setup.PostgresqlSetup() == 1 ){
-//      cout << "The Database couldn't open.";
-//      return 0;			// 0 mean false or unsuccesfull.
-//    }else{
-//      cout << "The Database opened. \nThe table creating...\n";
-//      // GameTableInstall GameTable;
-//      // if ( GameTable.GamesTableInstallation() != 1 ){
-//	// ::cout << "The table created succesfully!";
-//	// return 1;		// 1 mean true
-//      // }else{
-//	return 1;		// 0 mean false
-//      // }
-//    }
-//  }
-
 };

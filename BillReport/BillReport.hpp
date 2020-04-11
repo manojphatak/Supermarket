@@ -22,13 +22,13 @@ public:
 			cout << record.getShow("garden") << endl;
 		}else if (choice == 4 ){
 			cout << record.getShow("books") << endl;
-		}else if( choice ==  5 ){
-		std::string listofSection [4] = {"games", "toys", "garden", "books"};
- 		float net = 0.00;
-	 	for( int i = 0; i < 3; i++ ){
-			net += record.getShow(listofSection[i]);
-	      	}
-    		cout << net << endl;
+//		}else if( choice ==  5 ){
+//		std::string listofSection [4] = {"games", "toys", "garden", "books"};
+// 		float net = 0.00;			// That will be convert to float for per record.
+//	 	for( int i = 0; i < 3; i++ ){          // This section after the add the other sections.
+//			net += record.getShow(listofSection[i]);
+//	      	}
+//    		cout << net << endl;
   		}
 	}		
 };
