@@ -16,7 +16,6 @@
  */
 
 
-
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -54,10 +53,10 @@ int main(){
     std::cout << "1.Add the items";
     std::cin >> itemno;
     if ( itemno == 1 ){
-      AddofRecord addgame;
+      AddRecords addgame;
       std::string YorN = "Y";
       while ( YorN == "Y" ){
-        addgame.add();
+        addgame.menuforregulations();
         std::cout << "\nWill you add more gmae records? Y/N" << std::endl;
         std::cin >> YorN;
       }

@@ -1,32 +1,31 @@
 #include <sstream>
 #include "../Sections/Games.hpp"
+#include "../Sections/Toys.hpp"
+#include "../Sections/Books.hpp"
+#include "../Sections/Garden.hpp"
 
-class AddofRecord{
+class AddRecords{
 public:
-  void add(){
-    string sql, GameName, BrandName;
-    int ProductYear;
-    float Price;
-    Games Gameobj;
-    std::cout << "Game Name: " << std::endl;
-    std::cin >> GameName;
-    std::cout << "Brand Name: " << std::endl;
-    std::cin >> BrandName;
-    std::cout << "Price: (Sample 4.54)" << std::endl;
-    std::cin >> Price;
-    std::cout << "Product Year: " << std::endl;
-    std::cin >> ProductYear;
-    sql = "INSERT INTO games (PRODUCTNAME,BRANDNAME,PRICE,PRODUCTYEAR) VALUES ('" + GameName + "','" + BrandName  + "','$" + InttoString(Price) + "','" + InttoString(ProductYear) +"');";
-    PostgresConnection PostgresConn;
-    if ( PostgresConn.Add(sql) == 0 ){
-      std::cout << "The record added successfully!";
-	}else{
-      std::cout << "Something Gone Wrong!";
-    }
-  }
-  string InttoString(int number){
-    ostringstream temp;
-    temp << number;
-    return temp.str();
-  }
+	void menuforregulations(){
+		int SectionNumber;
+		cout << "1. Games" << endl;
+		cout << "2. Toys" << endl;
+		cout << "3. Books" << endl;
+		cout << "4. Garden" << endl;
+		cin >> SectionNumber;			// This part needs to validation. The number must be under 5
+		ForwardtoSections( SectionNumber );
+	}
+	void ForwardtoSections( int SectionNumber ){
+		if ( SectionNumber == 1 ){
+			Games games;
+			games.add();	
+		}else if ( SectionNumber == 2 ){
+			Toys toys;
+			toys.add();
+		}else if ( SectionNumber == 3 ){
+
+		}else if ( SectionNumber == 4 ){
+
+		}
+	}
 };
