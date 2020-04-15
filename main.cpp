@@ -21,6 +21,7 @@
 #include <algorithm>
 #include "BillReport/BillReport.hpp"
 #include "Regulations/Add.hpp"
+#include "Regulations/Remove.hpp"
 #include "Details/Show.hpp"
 #include "Sections/Postgres/setup.hpp"
 
@@ -54,13 +55,21 @@ int main(){
     std::cout << "2. Remove the items." << endl;
     std::cin >> itemno;
     if ( itemno == 1 ){
-      AddRecords addgame;
-      std::string YorN = "Y";
-      while ( YorN == "Y" ){
-        addgame.menuforregulations();
-        std::cout << "\nWill you add more gmae records? Y/N" << std::endl;
-        std::cin >> YorN;
-      }
+	AddRecords addgame;
+      	std::string YorN = "Y";
+      	while ( YorN == "Y" ){
+        	addgame.menuforregulations();
+        	std::cout << "\nWill you add more gmae records? Y/N" << std::endl;
+        	std::cin >> YorN;
+      	}
+    }else if ( itemno == 2 ){
+	    RemoveTheRecord deleterecords;
+	    std::string YorN = "Y";
+	    while ( YornN = "Y" ){
+		    deleterecords.MenuForSelectSection();
+		    std::cout << "\nWill you add more gmae records? Y/N" << std::endl;
+        	    std::cin >> YorN;
+	    }
     }
     break;
   }
