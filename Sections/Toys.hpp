@@ -1,5 +1,10 @@
 class Toys{
 public:
+	void RemoveWithID(){
+
+	}
+	void RemoveWithName(){
+	}
 	void add(){
     		string sql, ProductName, BrandName;
        	        int ProductYear;

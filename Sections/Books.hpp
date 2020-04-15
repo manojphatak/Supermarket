@@ -1,5 +1,11 @@
 class Books{
 public:
+	void RemoveWithID(){
+
+	}
+	void RemoveWithName(){
+
+	}
 	void add(){
     		string sql, ProductName, BrandName, ISBN;
        	        int ProductYear;

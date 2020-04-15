@@ -1,5 +1,10 @@
 class Garden{
 public:
+	void RemoveWithID(){
+
+	}
+	void RemoveWithName(){
+	}
 	void add(){
     		string sql, ProductName, BrandName, Section;
        	        float Price;

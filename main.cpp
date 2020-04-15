@@ -65,7 +65,7 @@ int main(){
     }else if ( itemno == 2 ){
 	    RemoveTheRecord deleterecords;
 	    std::string YorN = "Y";
-	    while ( YornN = "Y" ){
+	    while ( YorN == "Y" ){
 		    deleterecords.MenuForSelectSection();
 		    std::cout << "\nWill you add more gmae records? Y/N" << std::endl;
         	    std::cin >> YorN;

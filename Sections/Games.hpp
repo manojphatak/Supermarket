@@ -1,5 +1,11 @@
 class Games{
 public:
+	void RemoveWithID(){
+
+	}
+	void RemoveWithName(){
+	
+	}
     void add(){
     	string sql, GameName, BrandName;
         int ProductYear;
