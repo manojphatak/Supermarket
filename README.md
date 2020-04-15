@@ -60,3 +60,5 @@ Market -----/                          \  ProductYear /
 7. [+] The other sections need to add in program.
 8. [+] Regualtion items need to has remove and edit choices.
 9. [-] The bill total calculation doesn't work as I want.
+10. [-] The regulations section has remove and edit section.
+11. [-] Coverage test and stub test neccesary for Github Actions.
