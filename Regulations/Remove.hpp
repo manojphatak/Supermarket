@@ -27,6 +27,14 @@ public:
 		cout << "4. Garden" << endl;
 		int SectionNumber;
 		cin >> SectionNumber;
+		while (1){
+			if( cin.fail() || ( SectionNumber <= 4 && SectionNumber > 0 )){
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(),'\n');
+				cout << "You didn't enter number. \n Your choices must be between 0 to 4."
+				cin >> SectionNumber;
+			}
+		}
 		MenuForRemove();
 	}
 private:	
