@@ -11,6 +11,7 @@ public:
 	}
 	void RemoveWithName(string Name){
 		string sql = "DELETE FROM books WHERE productname = " + Name;
+		PostgresConnection PostgresConn;
        	        if ( PostgresConn.Add(sql) == 0 ){
        	          	std::cout << "The record added successfully!";
        	          }else{

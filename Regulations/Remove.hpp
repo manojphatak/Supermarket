@@ -42,6 +42,25 @@ public:
 		MenuForRemove(SectionNumber);
 	}
 private:	
+
+	int InputForID(){		//This function necessary for take trust Integer input. 
+		int IDnumber;
+		do{
+			cout << "Get ID number of record" << endl;
+			cin >> IDnumber;
+		} while( isdigit(IDnumber) );
+		return IDnumber;
+	}
+
+	string InputForName(){
+		string Name;
+		do{
+			cout << "Get ID number of record" << endl;
+			cin >> Name;
+		} while( isNumber(Name) );
+		return Name;
+	}
+
 	void MenuForRemove(int SectionNumber){
 		cout << "You need to select one way for delete a record:" << endl;
 		cout << "1. Delete with ID number." << endl;
@@ -55,9 +74,11 @@ private:
 		if ( SectionNumber == 1 ){
 			Games games;
 			if ( MethodSelection == 1 ){
-				games.RemoveWithID();	
+				int ID = InputForID();
+				games.RemoveWithID(ID);	
 			}else if ( MethodSelection == 2 ){
-				games.RemoveWithName();
+				string name = InputForName();
+				games.RemoveWithName(name);
 			}else{
 				wcerr << "You didn't input in menu. So the program will close." << endl;
 				exit(1);
@@ -65,9 +86,11 @@ private:
 		}else if ( SectionNumber == 2 ){
 			Toys toys;
 			if ( MethodSelection == 1 ){
-				toys.RemoveWithID();
+				int ID = InputForID();
+				toys.RemoveWithID(ID);
 			}else if ( MethodSelection == 2 ){
-				toys.RemoveWithName();
+				string name = InputForName();
+				toys.RemoveWithName(name);
 			}else{
 				wcerr << "You didn't input in menu. So the program will close." << endl;
 				exit(1);
@@ -75,9 +98,11 @@ private:
 		}else if ( SectionNumber == 3 ){
 			Books books;
 			if ( MethodSelection == 1 ){
-				books.RemoveWithID();
+				int ID = InputForID();
+				books.RemoveWithID(ID);
 			}else if ( MethodSelection == 2 ){
-				books.RemoveWithName();
+				string name = InputForName();
+				books.RemoveWithName(name);
 			}else{
 				wcerr << "You didn't input in menu. So the program will close." << endl;
 				exit(1);
@@ -85,9 +110,11 @@ private:
 		}else if ( SectionNumber == 4 ){
 			Garden garden;
 			if ( MethodSelection == 1 ){
-				garden.RemoveWithID();	
+				int ID = InputForID();
+				garden.RemoveWithID(ID);	
 			}else if ( MethodSelection == 2 ){
-				garden.RemoveWithName();
+				string name = InputForName();
+				garden.RemoveWithName(name);
 			}else{
 				std::wcerr << "You didn't input in menu. So the program will close." << endl;
 				exit(1);
@@ -95,5 +122,12 @@ private:
 		}else{
 			std::wcerr << "You didn't give acceptable input" << endl;
 		}
+	}
+	bool isNumber(string s){
+    		for (int i = 0; i < s.length(); i++)
+        	if (isdigit(s[i]) == false)
+            		return false;
+	
+    	return true;
 	}
 };	
