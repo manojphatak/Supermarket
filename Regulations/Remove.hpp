@@ -16,6 +16,10 @@
  * =====================================================================================
  */
 
+//#include "../Sections/Books.hpp"
+//#include "../Sections/Games.hpp"
+//#include "../Sections/Garden.hpp"
+//#include "../Sections/Toys.hpp"
 
 class RemoveTheRecord{
 public:
@@ -27,18 +31,18 @@ public:
 		cout << "4. Garden" << endl;
 		int SectionNumber;
 		cin >> SectionNumber;
-		while (1){
-			if( cin.fail() || ( SectionNumber <= 4 && SectionNumber > 0 )){
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(),'\n');
-				cout << "You didn't enter number. \n Your choices must be between 0 to 4." << endl;
-				cin >> SectionNumber;
-			}
-		}
-		MenuForRemove();
+//		while (1){
+//			if( cin.fail() || ( SectionNumber <= 4 && SectionNumber > 0 )){
+//				cin.clear();
+//				cin.ignore(numeric_limits<streamsize>::max(),'\n');
+//				cout << "You didn't enter number. \n Your choices must be between 0 to 4." << endl;
+//				cin >> SectionNumber;
+//			}
+//		}
+		MenuForRemove(SectionNumber);
 	}
 private:	
-	void MenuForRemove(){
+	void MenuForRemove(int SectionNumber){
 		cout << "You need to select one way for delete a record:" << endl;
 		cout << "1. Delete with ID number." << endl;
 		cout << "2. Delete with the Name of record." << endl;
@@ -55,7 +59,7 @@ private:
 			}else if ( MethodSelection == 2 ){
 				games.RemoveWithName();
 			}else{
-				std::werr << "You didn't input in menu. So the program will close." << endl;
+				wcerr << "You didn't input in menu. So the program will close." << endl;
 				exit(1);
 			}
 		}else if ( SectionNumber == 2 ){
@@ -65,7 +69,7 @@ private:
 			}else if ( MethodSelection == 2 ){
 				toys.RemoveWithName();
 			}else{
-				std::werr << "You didn't input in menu. So the program will close." << endl;
+				wcerr << "You didn't input in menu. So the program will close." << endl;
 				exit(1);
 			}
 		}else if ( SectionNumber == 3 ){
@@ -75,7 +79,7 @@ private:
 			}else if ( MethodSelection == 2 ){
 				books.RemoveWithName();
 			}else{
-				std::werr << "You didn't input in menu. So the program will close." << endl;
+				wcerr << "You didn't input in menu. So the program will close." << endl;
 				exit(1);
 			}
 		}else if ( SectionNumber == 4 ){
@@ -85,11 +89,11 @@ private:
 			}else if ( MethodSelection == 2 ){
 				garden.RemoveWithName();
 			}else{
-				std::werr << "You didn't input in menu. So the program will close." << endl;
+				std::wcerr << "You didn't input in menu. So the program will close." << endl;
 				exit(1);
 			}
 		}else{
-			std::werr << "You didn't give acceptable input" << endl;
+			std::wcerr << "You didn't give acceptable input" << endl;
 		}
 	}
 };	
