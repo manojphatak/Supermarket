@@ -10,10 +10,12 @@ The program using on management office so they can give input the system. The re
 The first necessary PostgreSQL-11 and libpqxx library for PostgreSQL connection. You can follow these instructions for install postgreSQL. You need to be apply this code for install the libpqxx library in Debian and Redhatsystems:
 
 ```
-sudo apt install libpqxx-6.2 libpqxx-dev   ## For Debian
-sudo dnf install libpqxx-6.2 libpqxx-dev   ## For Fedora or Centos 8
-sudo yum install libpqxx-6.2 libpqxx-dev   ## For Centos 7 or before
+sudo apt install libpqxx-7.0 libpqxx-dev   ## For Debian
+sudo dnf install libpqxx-7.0 libpqxx-dev   ## For Fedora or Centos 8
+sudo yum install libpqxx-7.0 libpqxx-dev   ## For Centos 7 or before
 ```
+
+If your package manager couldn't find this packages, You can install with cmake with [source code](https://github.com/jtv/libpqxx).
 
 This packages in this repository *http://deb.debian.org/debian buster/main amd64.*
 
@@ -21,7 +23,7 @@ The Postgresql setup is like this:
 
 ```
 create user employee with password test;
-grant NOLOGIN, NOCREATEROLE, NOSUPERUSER on database "Supermarket" to employee;
+grant NOLOGIN, NOCREATEROLE, NOSUPERUSER on database "supermarket" to employee;
 create database Supermarket owner employee;
 ```
 
@@ -48,6 +50,10 @@ Market -----/                          \  ProductYear /
 
 ```
 
+**This program for practices of Object Oriented Programming. I use Document Driven Development (DDD). This program has Inheritance, Polymorphism, Encapsulation, Access Specifiers, Class Methods, Function overloading and Exceptions examples.**
+
+
+**If you want to use real life program, you can use cmake. That will be work faster than. You can find the cmake page in this [link](https://cmake.org/). Also, you need to fix bugs in SonarQube.**
 
 # The Issues:
 
@@ -59,6 +65,6 @@ Market -----/                          \  ProductYear /
 6. [+] The bill report doesn't work.
 7. [+] The other sections need to add in program.
 8. [+] Regualtion items need to has remove and edit choices.
-9. [-] The bill total calculation doesn't work as I want.
-10. [-] The regulations section has remove and edit section.
-11. [-] Coverage test and stub test neccesary for Github Actions.
+9. [+] The bill total calculation doesn't work as I want.
+10. [+] The regulations section need to has remove section.
+11. [-] Coverage test and stub test neccesary for Github Actions. [I don't know about Github Actions, I am working on.]
