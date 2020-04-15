@@ -1,10 +1,21 @@
 class Books{
 public:
-	void RemoveWithID(){
-
+	void RemoveWithID(int IDnumber){
+		string sql = "DELETE FROM books WHERE id = " + InttoString(IDnumber);
+		PostgresConnection PostgresConn;
+       	        if ( PostgresConn.Add(sql) == 0 ){
+       	          	std::cout << "The record added successfully!";
+       	          }else{
+       	          	std::cout << "Something Gone Wrong!";
+       	        }
 	}
-	void RemoveWithName(){
-
+	void RemoveWithName(string Name){
+		string sql = "DELETE FROM books WHERE productname = " + Name;
+       	        if ( PostgresConn.Add(sql) == 0 ){
+       	          	std::cout << "The record added successfully!";
+       	          }else{
+       	          	std::cout << "Something Gone Wrong!";
+       	        }
 	}
 	void add(){
     		string sql, ProductName, BrandName, ISBN;
