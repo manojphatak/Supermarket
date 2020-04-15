@@ -50,7 +50,8 @@ int main(){
     break;
   } 
   case 2: {
-    std::cout << "1.Add the items";
+    std::cout << "1. Add the items." << endl;
+    std::cout << "2. Remove the items." << endl;
     std::cin >> itemno;
     if ( itemno == 1 ){
       AddRecords addgame;
