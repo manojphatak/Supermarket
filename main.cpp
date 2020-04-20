@@ -24,6 +24,7 @@
 #include "Regulations/Remove.hpp"
 #include "Details/Show.hpp"
 #include "Sections/Postgres/setup.hpp"
+#include "gtest/gtest.h"
 
 
 int main(){

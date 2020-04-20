@@ -18,8 +18,11 @@
 
 #include <iostream>
 #include <gtest/gtest.h>
-
 using namespace std;
+
+TEST (SampleTest,SampleTestofThemain){
+	ASSERT_TRUE( 1 == 1 );
+}
 
 int main(int argc, char **argv){
 	testing::InitGoogleTest(&argc,argv);

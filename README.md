@@ -68,3 +68,5 @@ Market -----/                          \  ProductYear /
 9. [+] The bill total calculation doesn't work as I want.
 10. [+] The regulations section need to has remove section.
 11. [-] Coverage test and stub test neccesary for Github Actions. [I don't know about Github Actions, I am working on.]
+12. [+] Write tests and use github actions.
+13. [+] The licence missing
