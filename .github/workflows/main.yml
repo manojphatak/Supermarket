@@ -24,7 +24,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Create build directory and go inside.
-      run: mkdir build 
+      run: mkdir build && cd build
     
     - name: run cmake 
       run: cmake ..
