@@ -37,6 +37,7 @@ g++ main.cpp -std=c++2a -lpqxx -lpq -pthread
 Also, you can build with cmake
 
 ```
+mkdir build
 cd build
 cmake ..
 make

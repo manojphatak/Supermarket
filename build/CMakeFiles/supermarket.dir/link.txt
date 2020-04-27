@@ -1,1 +1,0 @@
-/usr/bin/c++   -lpqxx -lpq   CMakeFiles/supermarket.dir/main.cpp.o  -o supermarket /usr/local/lib/libpqxx.a /usr/lib/x86_64-linux-gnu/libpq.so 
