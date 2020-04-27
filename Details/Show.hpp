@@ -1,5 +1,3 @@
-#include "gtest/gtest.h"
-
 class Show: public PostgresConnection {
 public:
   string getDetails(string ProductName){
@@ -26,9 +24,3 @@ public:
       return "SUCCESS";
   }
 };
-
-TEST( GetDetails, GetDetailsShow ){
-	Show shw;
-	ASSERT_FALSE(1 == 1);
-	//ASSERT_STREQ(shw.getDetails("games"),"SUCCESS");
-}

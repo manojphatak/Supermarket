@@ -3,14 +3,14 @@
  *
  *       Filename:  main.cpp
  *
- *    Description:  
+ *    Description:
  *
  *        Version:  1.0
  *        Created:  2020-04-10 01:35:52 AM
  *       Compiler:  g++
  *
  *         Author:  Safa Bayar (rection), safa@safabayar.tech
- *   Organization:  
+ *   Organization:
  *
  * =====================================================================================
  */
@@ -24,7 +24,6 @@
 #include "Regulations/Remove.hpp"
 #include "Details/Show.hpp"
 #include "Sections/Postgres/setup.hpp"
-#include "gtest/gtest.h"
 
 
 int main(){
@@ -32,7 +31,7 @@ int main(){
   PostgresSetup setupoftables;
   if (setupoftables.PostgresqlSetup() != 0 ){
 	  std::cout << "Bye" << std::endl;
-	  exit(-1); 
+	  exit(-1);
   }
 
   int itemno=0,menuselect=0;
@@ -50,7 +49,7 @@ int main(){
     BillReport BillReportObj;
     BillReportObj.menuforsection();
     break;
-  } 
+  }
   case 2: {
     std::cout << "1. Add the items." << endl;
     std::cout << "2. Remove the items." << endl;

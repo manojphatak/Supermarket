@@ -1,0 +1,3 @@
+/media/safa/Yedek1/calismalar/Supermarket/build/CMakeFiles/rebuild_cache.dir
+/media/safa/Yedek1/calismalar/Supermarket/build/CMakeFiles/supermarket.dir
+/media/safa/Yedek1/calismalar/Supermarket/build/CMakeFiles/edit_cache.dir

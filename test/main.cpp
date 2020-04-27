@@ -3,7 +3,7 @@
  *
  *       Filename:  main.cpp
  *
- *    Description:  
+ *    Description:
  *
  *        Version:  1.0
  *        Created:  2020-04-19 10:09:18 PM
@@ -11,12 +11,12 @@
  *       Compiler:  gcc
  *
  *         Author:  Safa Bayar (rection), safa@safabayar.tech
- *   Organization:  
+ *   Organization:
  *
  * =====================================================================================
  */
 
-#include <iostream>
+// #include <iostream>
 #include <gtest/gtest.h>
 using namespace std;
 

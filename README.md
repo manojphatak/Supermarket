@@ -31,7 +31,7 @@ create database Supermarket owner employee;
 You can compile right now. I used c++2a standarts. The g++/gcc should be up version of 8:
 
 ```
-g++ main.cpp -std=c++2a -lpqxx -lpq
+g++ main.cpp -std=c++2a -lpqxx -lpq -pthread
 ```
 
 
