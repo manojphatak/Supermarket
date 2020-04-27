@@ -34,6 +34,14 @@ You can compile right now. I used c++2a standarts. The g++/gcc should be up vers
 g++ main.cpp -std=c++2a -lpqxx -lpq -pthread
 ```
 
+Also, you can build with cmake
+
+```
+cd build
+cmake ..
+make
+./supermarket
+```
 
 ## Table Structure in PostgreSQL
 
