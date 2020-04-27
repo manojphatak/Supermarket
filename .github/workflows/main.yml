@@ -30,7 +30,7 @@ jobs:
       run: mkdir build 
       
     - name: go inside.
-      run: cd build && pwd && ls -l
+      run: cd build && pwd && ls -l ..
     
     - name: run cmake 
       run: cmake ..
