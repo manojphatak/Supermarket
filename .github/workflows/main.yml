@@ -27,7 +27,7 @@ jobs:
       run: mkdir build 
       
     - name: go inside.
-      run: cd build 
+      run: cd build && pwd
     
     - name: run cmake 
       run: cmake ..
