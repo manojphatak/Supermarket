@@ -23,8 +23,11 @@ jobs:
     - uses: actions/checkout@v2
 
     # Runs a single command using the runners shell
-    - name: Create build directory and go inside.
-      run: mkdir build && cd build
+    - name: Create build directory.
+      run: mkdir build 
+      
+    - name: go inside.
+      run: cd build 
     
     - name: run cmake 
       run: cmake ..
