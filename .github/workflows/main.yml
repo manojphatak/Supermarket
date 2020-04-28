@@ -24,11 +24,11 @@ jobs:
  
     # Runs a single command using the runners shell
       
-    - name: go inside.
-      run: cd build && pwd && ls -l ..
+    - name: run make
+      run: rm -rf build && mkdir build && cd build && cmake .. 
 
     - name: run make
-      run: make .
+      run: make
          
     - name: make check
       run: make check
