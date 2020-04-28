@@ -28,7 +28,7 @@ jobs:
       run: cd build && pwd && ls -l ..
 
     - name: run make
-      run: make
+      run: make .
          
     - name: make check
       run: make check
