@@ -28,7 +28,7 @@ jobs:
       run: sudo apt install xmlto
       
     - name: install pqxx
-      run: cd .. && git clone https://github.com/jtv/libpqxx.git && cd libpqxx && ./configure && make && make install && cd Supermarket
+      run: cd .. && git clone https://github.com/jtv/libpqxx.git && cd libpqxx && ./configure && make && sudo make install && cd Supermarket
       
     - name: run make
       run: rm -rf build && mkdir build && cd build && cmake .. 
