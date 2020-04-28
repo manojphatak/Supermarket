@@ -1,4 +1,4 @@
-[![Quality Gate Status](https://sonar.safabayar.tech/api/project_badges/measure?project=Supermarket&metric=alert_status)](https://sonar.safabayar.tech/dashboard?id=Supermarket)
+![CI](https://github.com/rection/Supermarket/workflows/CI/badge.svg)
 
 I am doing practise for improve myself on C++. This project purpose, the supermarket take register of the products. The products are seperate with the section. These sections are Games, Books, Toys and Groceries. 
 
