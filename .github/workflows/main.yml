@@ -23,8 +23,6 @@ jobs:
     - uses: actions/checkout@v2
  
     # Runs a single command using the runners shell
-    - name: Create build directory.
-      run: mkdir build 
       
     - name: go inside.
       run: cd build && pwd && ls -l ..
