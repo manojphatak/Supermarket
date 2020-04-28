@@ -24,6 +24,9 @@ jobs:
  
     # Runs a single command using the runners shell
       
+    - name: install pqxx
+      run: cd .. && git clone https://github.com/jtv/libpqxx.git && ./configure && make && make install && cd Supermarket
+      
     - name: run make
       run: rm -rf build && mkdir build && cd build && cmake .. 
 
