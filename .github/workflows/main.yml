@@ -24,6 +24,9 @@ jobs:
  
     # Runs a single command using the runners shell
       
+    - name: install xmlto
+      run: apt install xmlto
+      
     - name: install pqxx
       run: cd .. && git clone https://github.com/jtv/libpqxx.git && cd libpqxx && ./configure && make && make install && cd Supermarket
       
