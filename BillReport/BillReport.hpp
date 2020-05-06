@@ -14,6 +14,7 @@ public:
 		}
 		return choice;		
 	}
+	
 	void show( int choice ){
 		PostgresConnection record;
 		if ( choice == 1 ){

@@ -18,31 +18,22 @@
 
 #include <gtest/gtest.h>
 // #include <gmock/gmock.h>
-// #include <pqxx/pqxx>
-// #include "../BillReport/BillReport.hpp"
-// #include "../main.cpp"
+#include "../BillReport/BillReport.hpp"
 // #include "../Sections/Toys.hpp"
-#include "../Sections/Postgres/PostgresConnection.hpp"
-// #include "../Sections/Postgres/tablesetup.hpp"
-// #include "../Sections/Postgres/setup.hpp"
-// #include <string>
-using namespace std;
+// #include "../Sections/Postgres/PostgresConnection.hpp"
+// #include "../main.cpp"
 
-// class MockBill: public BillReport{
-	// MOCK_METHOD0(int, menuforsection,() )
-// }
+using namespace std;
 
 TEST(power,myCubeTest){
 	PostgresConnection tes;
 	ASSERT_TRUE(tes.Add("DELETE FROM toys WHERE productname = 1;"));
 }
 
-// TEST (BillReport, show){
-// 	int choice = 5;
-// 	ASSERT_LE(BillReport::menuforsection(),choice);
-// }
-TEST (SampleTest,SampleTestofThemain){
-	ASSERT_TRUE( 1 == 1 );
+TEST (billReport, power){
+	BillReport rpt;
+	ASSERT_EQ(2,rpt.power(2,1));
+	// ASSERT_EQ(4,rpt.power(4,2));
 }
 
 
