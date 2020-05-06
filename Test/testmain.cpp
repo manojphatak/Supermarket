@@ -17,12 +17,18 @@
  */
 
 #include <gtest/gtest.h>
+// #include <gmock/gmock.h>
 #include "../BillReport/BillReport.hpp"
 using namespace std;
 
-TEST (BillReport, show){
-	ASSERT_TRUE()
-}
+// class MockBill: public BillReport{
+// 	MOCK_METHOD(int, menuforsection,(),);
+// }
+
+// TEST (BillReport, show){
+// 	int choice = 5;
+// 	ASSERT_LE(BillReport::menuforsection(),choice);
+// }
 TEST (SampleTest,SampleTestofThemain){
 	ASSERT_TRUE( 1 == 1 );
 }

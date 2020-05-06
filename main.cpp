@@ -48,7 +48,8 @@ int main(){
   switch(menuselect) {
   case 1: {
     BillReport BillReportObj;
-    BillReportObj.menuforsection();
+    int choice = BillReportObj.menuforsection();
+    BillReportObj.show(choice);
     break;
   }
   case 2: {

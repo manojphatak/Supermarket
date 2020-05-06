@@ -2,15 +2,17 @@
 
 class BillReport {
 public:
-	void menuforsection(){
+	int  menuforsection(){
 		int choice;
 		cout << "1. games" << endl;
 	        cout << "2. toys" << endl;
        		cout << "3. garden" << endl;
  		cout << "4. books" << endl;
 		cout << "5. Total" << endl;
-		cin >> choice;			// This area needs validation control.
-		show(choice);		
+		while(choice > 0 && choice <= 5){
+			cin >> choice;			// This area needs validation control.
+		}
+		return choice;		
 	}
 	void show( int choice ){
 		PostgresConnection record;
