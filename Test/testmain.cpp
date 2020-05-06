@@ -25,17 +25,28 @@
 
 using namespace std;
 
-TEST(power,myCubeTest){
+
+TEST(Postgresql,Add_First_Record){
 	PostgresConnection tes;
-	ASSERT_TRUE(tes.Add("DELETE FROM toys WHERE productname = 1;"));
+	ASSERT_TRUE(tes.Add("INSERT INTO games (PRODUCTNAME,BRANDNAME,SECTION,PRICE) VALUES ('Bloodborn','jens','jens',23.3);"));
 }
 
 TEST (billReport, power){
 	BillReport rpt;
 	ASSERT_EQ(2,rpt.power(2,1));
-	// ASSERT_EQ(4,rpt.power(4,2));
 }
 
+TEST (Billreport, power_with_base){
+	BillReport rpt;
+	ASSERT_EQ(16,rpt.power(4,2));
+
+}
+
+TEST (Convert_Float, String_to_float){
+	BillReport rpt;
+	float te = 2.12;
+	ASSERT_EQ(te,rpt.converttofloat("2.12"));
+}
 
 int main(int argc, char **argv){
 	testing::InitGoogleTest(&argc,argv);

@@ -31,14 +31,12 @@ public:
 		 for( int i = 0; i < 4; i++ ){          // This section after the add the other sections.
 			string temp = record.getShow(listofSection[i]);
 			temp.erase(temp.begin());
-			converttofloat(temp);
-//			cout << net << endl;
-//			net += strtof(temp.c_str(),0);
-		      }
+			cout << converttofloat(temp) << endl;
+		}
 		    cout << net << endl;
   		}
 	}	
-	void converttofloat( string str ){
+	float converttofloat( string str ){
         float result= 0.0f;
         int len = str.length();
         int dotpos = 0;
@@ -51,7 +49,7 @@ public:
             }
         }
         result /= power(10,dotpos);
-        cout<<result;
+        return(result);
     }
                 
     int power(int n,int m){
