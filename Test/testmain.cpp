@@ -3,7 +3,7 @@
  *
  *       Filename:  main.cpp
  *
- *    Description:
+ *    Description: Works with that command : g++ -Wall -g -pthread testmain.cpp -lgtest_main  -lgtest -lpthread 
  *
  *        Version:  1.0
  *        Created:  2020-04-19 10:09:18 PM
@@ -16,13 +16,17 @@
  * =====================================================================================
  */
 
-// #include <iostream>
 #include <gtest/gtest.h>
+#include "../BillReport/BillReport.hpp"
 using namespace std;
 
+TEST (BillReport, show){
+	ASSERT_TRUE()
+}
 TEST (SampleTest,SampleTestofThemain){
 	ASSERT_TRUE( 1 == 1 );
 }
+
 
 int main(int argc, char **argv){
 	testing::InitGoogleTest(&argc,argv);

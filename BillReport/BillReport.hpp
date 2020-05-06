@@ -36,28 +36,25 @@ public:
   		}
 	}	
 	void converttofloat( string str ){
-                float result= 0.0f;
-                int len = str.length();
-                int dotpos = 0;
-                for (int n = 0; n < len; n++) {
-                if (str[n] == '.') {
+        float result= 0.0f;
+        int len = str.length();
+        int dotpos = 0;
+        for (int n = 0; n < len; n++) {
+        	if (str[n] == '.') {
                 dotpos = len - n - 1;
-                 }
-                else {
+            }
+            else {
                 result = result * 10 + (str[n]-'0');
-                }
-                }
-                result /= power(10,dotpos);
-                cout<<result;
-                 }
+            }
+        }
+        result /= power(10,dotpos);
+        cout<<result;
+    }
                 
-                int power(int n,int m)
-                {
-                if(m==1)
-                return n;
-                else
-                return n*(power(n,m-1));
-                }
-
-	
+    int power(int n,int m){
+        if(m==1)
+            return n;
+        else
+            return n*(power(n,m-1));
+        }
 };

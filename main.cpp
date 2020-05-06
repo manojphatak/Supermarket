@@ -3,7 +3,8 @@
  *
  *       Filename:  main.cpp
  *
- *    Description:
+ *    Description: Main page for application
+ *        Command: g++ main.cpp -std=c++2a -lpqxx -lpq -lpthread -pthread 
  *
  *        Version:  1.0
  *        Created:  2020-04-10 01:35:52 AM
