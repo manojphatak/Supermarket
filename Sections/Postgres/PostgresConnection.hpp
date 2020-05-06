@@ -25,7 +25,6 @@ private:
   string Show ( string nameofsection ){
 
       string sql = "SELECT SUM(PRICE) FROM " + nameofsection;
-      string::size_type sz;
       try{
 	      pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
       	if (C.is_open() ) {

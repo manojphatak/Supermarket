@@ -1,6 +1,0 @@
-projectKey=Supermarket
-serverUrl=https://sonar.safabayar.tech
-serverVersion=7.9.3.33349
-dashboardUrl=https://sonar.safabayar.tech/dashboard?id=Supermarket
-ceTaskId=AXF8fub0mtCoL2hElvPi
-ceTaskUrl=https://sonar.safabayar.tech/api/ce/task?id=AXF8fub0mtCoL2hElvPi
