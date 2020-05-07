@@ -13,7 +13,7 @@ build:
   script:
     - apt-get update -y && apt install xmlto -y
     - git clone https://github.com/jtv/libpqxx.git && cd libpqxx && ./configure && make && make install  
-    - cd /builds/project-0 && ls && g++ main.cpp -std=c++2a -lpqxx -lpq -lpthread -pthread  -o mybinary
+    - cd /builds/project-0 && g++ main.cpp -std=c++2a -lpqxx -lpq -lpthread -pthread  -o mybinary
   artifacts:
     paths:
       - mybinary
