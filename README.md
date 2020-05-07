@@ -1,5 +1,7 @@
 ![CI](https://github.com/rection/Supermarket/workflows/CI/badge.svg)
 
+[![pipeline status](https://gitlab.com/rection/super-market/badges/master/pipeline.svg)](https://gitlab.com/rection/super-market/-/commits/master)
+
 I am doing practise for improve myself on C++. This project purpose, the supermarket take register of the products. The products are seperate with the section. These sections are Games, Books, Toys and Groceries. 
 
 The program using on management office so they can give input the system. The records holds in PostgreSQL. I used libpqxx library for PostgreSQL connection. 
