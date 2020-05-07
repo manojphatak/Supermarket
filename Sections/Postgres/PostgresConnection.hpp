@@ -2,8 +2,8 @@
 
 using namespace std;
 
-class PostgresConnection{
 
+class PostgresConnection{
 private:
   	bool Add ( string sql ){
     	try {
@@ -22,13 +22,18 @@ private:
   	}
 
   	string Show ( string nameofsection ){
-	    string sql = "SELECT SUM(PRICE) FROM " + nameofsection;
+	    string sql = "SELECT SUM(PRICE) FROM " + nameofsection + ";";
     	try{
 	   		pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
 			pqxx::nontransaction N(C);
 			pqxx::result R( N.exec( sql ));
 			for (pqxx::result::const_iterator c = R.begin(); c != R.end(); ++c) {
-				return c[0].as<string>();
+				if( c[0].as<string>() == "NULL"){
+					std::cout << "Hasn't any record.";
+					return "0";
+				}else{
+					return c[0].as<string>();
+				}
 			}
     		} catch ( const exception &e ) {
 				std::cerr << e.what() <<  std::endl;

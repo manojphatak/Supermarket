@@ -28,7 +28,7 @@ using namespace std;
 
 TEST(Postgresql,Add_First_Record){
 	PostgresConnection tes;
-	ASSERT_TRUE(tes.Add("INSERT INTO games (PRODUCTNAME,BRANDNAME,SECTION,PRICE) VALUES ('Bloodborn','jens','jens',23.3);"));
+	ASSERT_TRUE(tes.setAdd("INSERT INTO games (PRODUCTNAME,BRANDNAME,SECTION,PRICE) VALUES ('Bloodborn','jens','jens',23.3);"));
 }
 
 TEST (billReport, power){

@@ -34,6 +34,13 @@ int main(){
 	  std::cout << "Bye" << std::endl;
 	  exit(-1);
   }
+  
+  TableInstallForPostgres Tabletest;
+  if (Tabletest.ExistTableTest() == 1){
+    std::cout << "Table created succesfully." << endl; 
+  }else{
+    std::cout << "The tables didn't create." << endl;
+  }
 
   int itemno=0,menuselect=0;
   std::cout << "\t\t\tSuper Market Billing\t\t\t\n";

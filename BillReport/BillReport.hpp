@@ -38,15 +38,14 @@ public:
 			cout << record.getShow("books") << endl;
 		}else if( choice ==  5 ){
 			std::string listofSection [4] = {"games", "toys", "garden", "books"};
-			double net;			// That will be convert to float for per record.
+			double net;			
+			vector <float> bills;
 			for( int i = 0; i < 4; i++ ){          // This section after the add the other sections.
 				string temp = record.getShow(listofSection[i]);
-				temp.erase(temp.begin());
-				vector <float> bills;
+				temp.erase(temp.begin());		
 				bills.push_back(converttofloat(temp));
-				cout << "$" << sum(bills) << endl;
 			}
-		    cout << net << endl;
+			cout << "Total Amount : $" << sum(bills) << endl;
   		}
 	}
 

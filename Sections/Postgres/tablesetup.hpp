@@ -12,7 +12,8 @@ public:
 	"PRODUCTNAME           CHAR(50)    NOT NULL,"	\
 	"BRANDNAME        CHAR(50)    NOT NULL,"		\
 	"PRICE        MONEY     NOT NULL,"			\
-	"PRODUCTYEAR            INT     NOT NULL);";
+	"PRODUCTYEAR            INT     NOT NULL); " \
+	"INSERT INTO games VALUES ('1','TEST','TEST',0.00,2013); ";
       pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
 	  if (C.is_open()) {
 		  pqxx::work W(C);
@@ -31,7 +32,8 @@ public:
 	"PRODUCTNAME           CHAR(50)    NOT NULL,"	\
 	"BRANDNAME        CHAR(50)    NOT NULL,"		\
 	"PRICE        MONEY     NOT NULL,"			\
-	"PRODUCTYEAR            INT     NOT NULL);";
+	"PRODUCTYEAR            INT     NOT NULL); "	\
+	"INSERT INTO toys VALUES ('1','TEST','TEST',0.00,2013); ";
       pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
 	  if (C.is_open()) {
 		  pqxx::work W(C);
@@ -50,7 +52,8 @@ public:
 	"PRODUCTNAME           CHAR(50)    NOT NULL,"	\
 	"BRANDNAME        CHAR(50)    NOT NULL," 	\
 	"SECTION	CHAR(50)	NOT NULL,"	\
-	"PRICE        MONEY     NOT NULL);";
+	"PRICE        MONEY     NOT NULL); "	\
+	"INSERT INTO garden VALUES ('1','TEST','TEST','TEST',0.00);";
       pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
 	  if (C.is_open()) {
 		  pqxx::work W(C);
@@ -70,7 +73,8 @@ public:
 	"BRANDNAME        CHAR(50)    NOT NULL,"		\
 	"PRICE        MONEY     NOT NULL,"			\
 	"ISBN	CHAR(30)	NOT NULL,"		\
-	"PRODUCTYEAR            INT     NOT NULL);";
+	"PRODUCTYEAR            INT     NOT NULL); "	\
+	"INSERT INTO games VALUES ('1','TEST','TEST',0.00,'050423454',2013);";
       pqxx::connection C("dbname = supermarket user = employee password = test hostaddr = 127.0.0.1 port = 5432");
 	  if (C.is_open()) {
 		  pqxx::work W(C);
@@ -84,7 +88,7 @@ public:
   }
 
 public:
-  void ExistTableTest(){	  
+  bool ExistTableTest(){	  
 	  std::string nameofsection[4] = {"games","books","toys","garden"};
 	  for (int i=0; i<4; i++){
 		std::string sql = "SELECT COUNT(*) FROM information_schema.tables WHERE table_name = '" + nameofsection[i]+ "';";
@@ -103,14 +107,16 @@ public:
 				}else if(nameofsection[i] == "garden"){
 					creategardentable();
 				}else{
-					cout << "The Table name is incorrect!" << endl;
+					cout << "The Tables created before!" << endl;
+					return 1;
 				}
 			}
   	  	}
       	  } catch ( const exception &e ) {
   		std::cerr << e.what() <<  std::endl;
+		  return -1;
 	  }
   	  }
-	  cout << "Tables tested " << endl;
+	  return 1;
   }
 };
