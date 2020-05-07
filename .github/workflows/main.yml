@@ -25,7 +25,7 @@ jobs:
     # Runs a single command using the runners shell
       
     - name: update
-      run: apt-get update
+      run: sudo apt-get update
       
     - name: install xmlto
       run: sudo apt autoremove && sudo apt install xmlto
