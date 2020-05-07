@@ -11,7 +11,8 @@ build:
   # before_script:
   #   - apt update && apt -y install make autoconf
   script:
-    - git clone https://github.com/jtv/libpqxx.git && cd libpqxx && ./configure && make && sudo make install
+    - apt-get update && apt install xmlto
+    - git clone https://github.com/jtv/libpqxx.git && cd libpqxx && ./configure && make && sudo make install && cd ..
     - g++ main.cpp -std=c++2a -lpqxx -lpq -lpthread -pthread  -o mybinary
   artifacts:
     paths:
