@@ -25,7 +25,7 @@ jobs:
     # Runs a single command using the runners shell
       
     - name: install xmlto
-      run: sudo apt install xmlto
+      run: sudo apt autoremove && sudo apt install xmlto
       
     - name: install pqxx
       run: cd .. && git clone https://github.com/jtv/libpqxx.git && cd libpqxx && ./configure && make && sudo make install && cd ..
