@@ -3,7 +3,7 @@ public:
 	void RemoveWithID(int ID){
 		string sql = "DELETE FROM toys WHERE productname = " + InttoString(ID) + ";";
 		PostgresConnection PostgresConn;
-       	        if ( PostgresConn.Add(sql) == 0 ){
+       	        if ( PostgresConn.setAdd(sql) == 0 ){
        	          	std::cout << "The record added successfully!";
        	          }else{
        	          	std::cout << "Something Gone Wrong!";
@@ -13,7 +13,7 @@ public:
 	void RemoveWithName(string Name){
 		string sql = "DELETE FROM toys WHERE productname = '" + Name + "';";
 		PostgresConnection PostgresConn;
-       	        if ( PostgresConn.Add(sql) == 0 ){
+       	        if ( PostgresConn.setAdd(sql) == 0 ){
        	          	std::cout << "The record added successfully!";
        	          }else{
        	          	std::cout << "Something Gone Wrong!";
@@ -33,7 +33,7 @@ public:
        	        std::cin >> ProductYear;
        	        sql = "INSERT INTO toys (PRODUCTNAME,BRANDNAME,PRICE,PRODUCTYEAR) VALUES ('" + ProductName + "','" + BrandName  + "','$" + InttoString(Price) + "','" + InttoString(ProductYear) +"');";
        	        PostgresConnection PostgresConn;
-       	        if ( PostgresConn.Add(sql) == 0 ){
+       	        if ( PostgresConn.setAdd(sql) == 0 ){
        	          	std::cout << "The record added successfully!";
        	          }else{
        	          	std::cout << "Something Gone Wrong!";
