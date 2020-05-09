@@ -14,7 +14,7 @@ public:
 		do{
 			cout << "Your choice: ";
 			cin >> choice;			// This area needs validation control.
-		}while(choice <= 0 && choice >= 5);
+		}while(choice < 0 | choice > 6);
 		return choice;		
 	}
 

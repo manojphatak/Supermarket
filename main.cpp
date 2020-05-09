@@ -37,9 +37,9 @@ int main(){
   
   TableInstallForPostgres Tabletest;
   if (Tabletest.ExistTableTest() == 1){
-    std::cout << "Table created succesfully." << endl; 
+    std::cout << "Table created succesfully." << std::endl; 
   }else{
-    std::cout << "The tables didn't create." << endl;
+    std::cout << "The tables didn't create." << std::endl;
   }
 
   int itemno=0,menuselect=0;
@@ -47,9 +47,12 @@ int main(){
   std::cout << "1. Bill Report\n";
   std::cout << "2. Regulation of The Item\n";
   std::cout << "3. Show Item Details\n";
-  std::cout << "4. Exit\nPlease Enter Required Option:";
-  std::cin >> menuselect;
+  std::cout << "4. Exit\n";
 
+  do{
+    std::cout << "Please Enter Required Option: ";
+    std::cin >> menuselect;
+  }while( menuselect <= 0 | menuselect > 4 );
 
 
   switch(menuselect) {
@@ -60,9 +63,13 @@ int main(){
     break;
   }
   case 2: {
-    std::cout << "1. Add the items." << endl;
-    std::cout << "2. Remove the items." << endl;
-    std::cin >> itemno;
+    std::cout << "1. Add the items." << std::endl;
+    std::cout << "2. Remove the items." << std::endl;
+    do{
+      std::cout << "Your choice for regulations method: ";
+      std::cin >> itemno;
+    }while( itemno <= 0 | itemno >= 3 );
+
     if ( itemno == 1 ){
 	AddRecords addgame;
       	std::string YorN = "Y";
@@ -76,7 +83,7 @@ int main(){
 	    std::string YorN = "Y";
 	    while ( YorN == "Y" ){
 		    deleterecords.MenuForSelectSection();
-		    std::cout << "\nWill you add more gmae records? Y/N" << std::endl;
+		    std::cout << "\nWill you add more game records? Y/N" << std::endl;
         	    std::cin >> YorN;
 	    }
     }
@@ -84,7 +91,7 @@ int main(){
   }
   case 3:
   {
-    string ProductName;
+    std::string ProductName;
     Show show;
     std::cout << "You need to give name of the product name: ";
     std::cin >> ProductName;

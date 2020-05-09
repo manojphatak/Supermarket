@@ -16,21 +16,17 @@
  * =====================================================================================
  */
 
-//#include "../Sections/Books.hpp"
-//#include "../Sections/Games.hpp"
-//#include "../Sections/Garden.hpp"
-//#include "../Sections/Toys.hpp"
-
 class RemoveTheRecord{
 public:
 	void MenuForSelectSection(){
-		cout << "Sections list:" << endl;
-		cout << "1. Games" << endl;
-		cout << "2. Toys" << endl;
-		cout << "3. Books" << endl;
-		cout << "4. Garden" << endl;
+		std::cout << "Sections list:" << std::endl;
+		std::cout << "1. Games" << std::endl;
+		std::cout << "2. Toys" << std::endl;
+		std::cout << "3. Books" << std::endl;
+		std::cout << "4. Garden" << std::endl;
 		int SectionNumber;
-		cin >> SectionNumber;
+		std::cout << "Section choice: "; 
+		std::cin >> SectionNumber;
 //		while (1){
 //			if( cin.fail() || ( SectionNumber <= 4 && SectionNumber > 0 )){
 //				cin.clear();
@@ -46,27 +42,28 @@ private:
 	int InputForID(){		//This function necessary for take trust Integer input. 
 		int IDnumber;
 		do{
-			cout << "Get ID number of record" << endl;
-			cin >> IDnumber;
+			std::cout << "Get ID number of record" << std::endl;
+			std::cin >> IDnumber;
 		} while( isdigit(IDnumber) );
 		return IDnumber;
 	}
 
-	string InputForName(){
-		string Name;
+	std::string InputForName(){
+		std::string Name;
 		do{
-			cout << "Get ID number of record" << endl;
-			cin >> Name;
+			std::cout << "Get ID number of record" << std::endl;
+			std::cin >> Name;
 		} while( isNumber(Name) );
 		return Name;
 	}
 
 	void MenuForRemove(int SectionNumber){
-		cout << "You need to select one way for delete a record:" << endl;
-		cout << "1. Delete with ID number." << endl;
-		cout << "2. Delete with the Name of record." << endl;
+		std::cout << "You need to select one way for delete a record:" << std::endl;
+		std::cout << "1. Delete with ID number." << std::endl;
+		std::cout << "2. Delete with the Name of record." << std::endl;
 		int MethodSelection;
-		cin >> MethodSelection;
+		std::cout << "Your method choice: ";
+		std::cin >> MethodSelection;
 		ForwardtoSections(SectionNumber,MethodSelection);
 	}
 
@@ -77,10 +74,10 @@ private:
 				int ID = InputForID();
 				games.RemoveWithID(ID);	
 			}else if ( MethodSelection == 2 ){
-				string name = InputForName();
+				std::string name = InputForName();
 				games.RemoveWithName(name);
 			}else{
-				wcerr << "You didn't input in menu. So the program will close." << endl;
+				std::wcerr << "You didn't input in menu. So the program will close." << std::endl;
 				exit(1);
 			}
 		}else if ( SectionNumber == 2 ){
@@ -89,10 +86,10 @@ private:
 				int ID = InputForID();
 				toys.RemoveWithID(ID);
 			}else if ( MethodSelection == 2 ){
-				string name = InputForName();
+				std::string name = InputForName();
 				toys.RemoveWithName(name);
 			}else{
-				wcerr << "You didn't input in menu. So the program will close." << endl;
+				std::wcerr << "You didn't input in menu. So the program will close." << std::endl;
 				exit(1);
 			}
 		}else if ( SectionNumber == 3 ){
@@ -101,10 +98,10 @@ private:
 				int ID = InputForID();
 				books.RemoveWithID(ID);
 			}else if ( MethodSelection == 2 ){
-				string name = InputForName();
+				std::string name = InputForName();
 				books.RemoveWithName(name);
 			}else{
-				wcerr << "You didn't input in menu. So the program will close." << endl;
+				std::wcerr << "You didn't input in menu. So the program will close." << std::endl;
 				exit(1);
 			}
 		}else if ( SectionNumber == 4 ){
@@ -113,17 +110,17 @@ private:
 				int ID = InputForID();
 				garden.RemoveWithID(ID);	
 			}else if ( MethodSelection == 2 ){
-				string name = InputForName();
+				std::string name = InputForName();
 				garden.RemoveWithName(name);
 			}else{
-				std::wcerr << "You didn't input in menu. So the program will close." << endl;
+				std::wcerr << "You didn't input in menu. So the program will close." << std::endl;
 				exit(1);
 			}
 		}else{
-			std::wcerr << "You didn't give acceptable input" << endl;
+			std::wcerr << "You didn't give acceptable input" << std::endl;
 		}
 	}
-	bool isNumber(string s){
+	bool isNumber(std::string s){
     		for (int i = 0; i < s.length(); i++)
         	if (isdigit(s[i]) == false)
             		return false;

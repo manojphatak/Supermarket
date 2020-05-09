@@ -8,11 +8,14 @@ class AddRecords{
 public:
 	void menuforregulations(){
 		int SectionNumber;
-		cout << "1. Games" << endl;
-		cout << "2. Toys" << endl;
-		cout << "3. Books" << endl;
-		cout << "4. Garden" << endl;
-		cin >> SectionNumber;			// This part needs to validation. The number must be under 5
+		std::cout << "--------------------------" << std::endl;
+		std::cout << "Regualtion Items:" << std::endl;
+		std::cout << "1. Games" << std::endl;
+		std::cout << "2. Toys" << std::endl;
+		std::cout << "3. Books" << std::endl;
+		std::cout << "4. Garden" << std::endl;
+		std::cout << "Your choice: ";
+		std::cin >> SectionNumber;			// This part needs to validation. The number must be under 5
 		ForwardtoSections( SectionNumber );
 	}
 	void ForwardtoSections( int SectionNumber ){
