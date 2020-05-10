@@ -13,7 +13,7 @@ build:
   script:
     - apt-get update -y && apt install xmlto -y
     - git clone https://github.com/jtv/libpqxx.git && cd libpqxx && ./configure && make && make install  
-    - cd /builds/project-0 && g++ main.cpp -std=c++2a -lpqxx -lpq -lpthread -pthread  -o mybinary
+    - cd /builds/rection/super-market/ && g++ main.cpp -std=c++2a -lpqxx -lpq -lpthread -pthread  -o mybinary
   artifacts:
     paths:
       - mybinary
@@ -29,7 +29,7 @@ test:
     - apt update -y && apt install xmlto cmake -y
     - git clone https://github.com/jtv/libpqxx.git && cd libpqxx && ./configure && make && make install && ls && cd ../..
     - git clone https://github.com/google/googletest.git && cd googletest && mkdir mybuild && cd mybuild && cmake .. && make && make install 
-    - cd /builds/project-0/Test/
+    - cd /builds/rection/super-market/Test/
     - g++ -std=c++2a -Wall -g -pthread testmain.cpp -lgtest_main  -lgtest -lpthread -lpqxx -lpq -o testbinary
   artifacts:
     paths:
