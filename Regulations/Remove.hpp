@@ -62,8 +62,10 @@ private:
 		std::cout << "1. Delete with ID number." << std::endl;
 		std::cout << "2. Delete with the Name of record." << std::endl;
 		int MethodSelection;
-		std::cout << "Your method choice: ";
-		std::cin >> MethodSelection;
+		do{
+			std::cout << "Your method choice: ";
+			std::cin >> MethodSelection;
+		}while(MethodSelection < 1 | MethodSelection > 2);
 		ForwardtoSections(SectionNumber,MethodSelection);
 	}
 

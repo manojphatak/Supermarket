@@ -83,7 +83,7 @@ int main(){
 	    std::string YorN = "Y";
 	    while ( YorN == "Y" ){
 		    deleterecords.MenuForSelectSection();
-		    std::cout << "\nWill you add more game records? Y/N" << std::endl;
+		    std::cout << "\nWill you remove more game records? Y/N" << std::endl;
         	    std::cin >> YorN;
 	    }
     }

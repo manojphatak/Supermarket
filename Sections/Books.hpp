@@ -1,7 +1,7 @@
 class Books{
 public:
 	void RemoveWithID(int IDnumber){
-		string sql = "DELETE FROM books WHERE id = " + InttoString(IDnumber) + ";";
+		string sql = "DELETE FROM books WHERE id = '" + InttoString(IDnumber) + "';";
 		PostgresConnection PostgresConn;
        	        if ( PostgresConn.setAdd(sql) == 0 ){
        	          	std::cout << "The record added successfully!";
@@ -10,7 +10,7 @@ public:
        	        }
 	}
 	void RemoveWithName(string Name){
-		string sql = "DELETE FROM books WHERE productname = " + Name + "';";
+		string sql = "DELETE FROM books WHERE productname = '" + Name + "';";
 		PostgresConnection PostgresConn;
        	        if ( PostgresConn.setAdd(sql) == 0 ){
        	          	std::cout << "The record added successfully!";
