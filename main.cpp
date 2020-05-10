@@ -92,14 +92,9 @@ int main(){
   case 3:
   {
     std::string ProductName;
-    Show show;
-    std::cout << "You need to give name of the product name: ";
-    std::cin >> ProductName;
-    if ( show.getDetails(ProductName) == "SUCCESS" ){
-      return 1;
-    }else{
-      return 0;
-    }
+    Show shw;
+    int choice = shw.Menu();
+    shw.Details(choice);
     break;
   }
   case 4: {

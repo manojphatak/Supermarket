@@ -7,8 +7,8 @@ public:
 	int  menuforsection(){
 		int choice;
 		cout << "1. games" << endl;
-	        cout << "2. toys" << endl;
-       		cout << "3. garden" << endl;
+	    cout << "2. toys" << endl;
+       	cout << "3. garden" << endl;
  		cout << "4. books" << endl;
 		cout << "5. Total" << endl;
 		do{
