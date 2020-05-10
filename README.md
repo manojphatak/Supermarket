@@ -79,6 +79,15 @@ Market -----/                          \  ProductYear /
 8. [+] Regualtion items need to has remove and edit choices.
 9. [+] The bill total calculation doesn't work as I want.
 10. [+] The regulations section need to has remove section.
-11. [-] Coverage test and stub test neccesary for Github Actions. [I don't know about Github Actions, I am working on.]
+11. [+] Coverage test and stub test neccesary for Github Actions. [I don't know about Github Actions, I am working on.]
 12. [+] Write tests and use github actions.
-13. [+] The licence missing
+13. [+] The licence missing.
+14. [+] Gitlab-CI/CD and github action were set.
+15. [+] Gtest installed and wroten some test.
+16. [?] Project need more test on Show, PostgreSQL and sections.
+17. [+] Details choice problem solved. That's show last record.
+18. [-] Details need to add search option like ID search and Name search. That can do with overloading.
+19. [+] Remove item sql problems and inheritance problems solved.
+20. [+] Bill Report class problems solved. Added sum functions. And added new validations.
+21. [+] All input have to validate.
+22. [?] QT options might be add in project. But I didn't decide right now. That might add on different branch. 

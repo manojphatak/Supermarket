@@ -18,9 +18,26 @@ public:
     string wantedsectionname = sectionconverter(menuselection);
     if( wantedsectionname == "books" ){
       vector <string> ColumnName = {"id", "productname", "brandname", "price", "isbn", "productyear"};
-      for( auto i : ColumnName ){
+      for( string i : ColumnName ){
         cout << i << " : " + getRecordsofSection("books",i) << endl;
       }
+    }else if ( wantedsectionname == "games"){
+      vector <string> ColumnName = {"id", "productname", "brandname", "price", "productyear"};
+      for( string i : ColumnName){
+        cout << i << " : " + getRecordsofSection("games",i) << endl;
+      }
+    }else if ( wantedsectionname == "toys"){
+      vector <string> ColumnName = {"id", "productname", "brandname", "price", "productyear"};
+      for( string i : ColumnName){
+        cout << i << " : " + getRecordsofSection("toys",i) << endl;
+      }
+    }else if ( wantedsectionname == "garden"){
+      vector <string> ColumnName = {"id", "productname", "brandname", "section", "price"};
+      for( string i : ColumnName){
+        cout << i << " : " + getRecordsofSection("garden",i) << endl;
+      }
+    }else{
+      cout << "Error! Section not found" << endl;
     }
   }
 

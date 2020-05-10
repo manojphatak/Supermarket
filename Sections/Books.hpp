@@ -1,9 +1,6 @@
 class Books : PostgresConnection{
 public:
 
-	// string show(string tlp){
-	// 	getRecordsofSection(Col)
-	// }
 	void RemoveWithID(int IDnumber){
 		string sql = "DELETE FROM books WHERE id = '" + InttoString(IDnumber) + "';";
 		PostgresConnection PostgresConn;
