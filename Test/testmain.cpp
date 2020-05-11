@@ -17,18 +17,20 @@
  */
 
 #include <gtest/gtest.h>
-// #include <gmock/gmock.h>
 #include "../BillReport/BillReport.hpp"
-// #include "../Sections/Toys.hpp"
-// #include "../Sections/Postgres/PostgresConnection.hpp"
-// #include "../main.cpp"
+#include "../Details/Show.hpp"
 
 using namespace std;
 
 
+TEST(ShowTest,sectionconverter){
+	Show shw;
+	ASSERT_EQ("books",shw.sectionconverter(4));
+}
+
 TEST(Postgresql,Add_First_Record){
 	PostgresConnection tes;
-	ASSERT_TRUE(tes.setAdd("INSERT INTO games (PRODUCTNAME,BRANDNAME,SECTION,PRICE) VALUES ('Bloodborn','jens','jens',23.3);"));
+	ASSERT_FALSE(tes.setAdd("INSERT INTO games (PRODUCTNAME,BRANDNAME,PRICE,PRODUCTYEAR) VALUES ('Bloodborn','jens',23.3,1999);"));
 }
 
 TEST (billReport, power){
