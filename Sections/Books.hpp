@@ -1,3 +1,21 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  Books.hpp
+ *
+ *    Description: Book section in market.
+ *        Command: g++ main.cpp -std=c++2a -lpqxx -lpq -lpthread -pthread 
+ *
+ *        Version:  1.0
+ *        Created:  2020-04-10 01:35:52 AM
+ *       Compiler:  g++
+ *
+ *         Author:  Safa Bayar (rection), safa@safabayar.tech
+ *   Organization:
+ *
+ * =====================================================================================
+ */
+
 class Books : PostgresConnection{
 public:
 

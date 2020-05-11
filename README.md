@@ -2,9 +2,6 @@
 [![pipeline status](https://gitlab.com/rection/super-market/badges/master/pipeline.svg)](https://gitlab.com/rection/super-market/-/commits/master)
 
 
-
-[![pipeline status](https://gitlab.com/rection/super-market/badges/master/pipeline.svg)](https://gitlab.com/rection/super-market/-/commits/master)
-
 I am doing practise for improve myself on C++. This project purpose, the supermarket take register of the products. The products are seperate with the section. These sections are Games, Books, Toys and Groceries. 
 
 The program using on management office so they can give input the system. The records holds in PostgreSQL. I used libpqxx library for PostgreSQL connection. 
@@ -47,6 +44,17 @@ cd build
 cmake ..
 make
 ./supermarket
+```
+
+If you couldn't understand how it's work. You may look CI/CD scripts. These are **.gitlab-ci.yml** and **.github/main.yml**.
+
+## Tests
+
+I wrote some test. You can add more tests for your necessities. You have to run with this parameters;
+
+```
+cd Test/
+g++ -std=c++2a -Wall -g -pthread testmain.cpp -lgtest_main  -lgtest -lpthread -lpqxx -lpq
 ```
 
 ## Table Structure in PostgreSQL
@@ -92,4 +100,5 @@ Market -----/                          \  ProductYear /
 19. [+] Remove item sql problems and inheritance problems solved.
 20. [+] Bill Report class problems solved. Added sum functions. And added new validations.
 21. [+] All input have to validate.
-22. [?] QT options might be add in project. But I didn't decide right now. That might add on different branch. 
+22. [+] Add descriptions in all files. 
+23. [?] QT options might be add in project. But I didn't decide right now. That might add on different branch. 
