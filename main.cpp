@@ -93,8 +93,7 @@ int main(){
   {
     std::string ProductName;
     Show shw;
-    int choice = shw.Menu();
-    shw.Details(choice);
+    shw.Menu();
     break;
   }
   case 4: {

@@ -86,9 +86,9 @@ Market -----/                          \  ProductYear /
 13. [+] The licence missing.
 14. [+] Gitlab-CI/CD and github action were set.
 15. [+] Gtest installed and wroten some test.
-16. [?] Project need more test on Show, PostgreSQL and sections.
+16. [+] Project need more test on Show, PostgreSQL and sections.
 17. [+] Details choice problem solved. That's show last record.
-18. [-] Details need to add search option like ID search and Name search. That can do with overloading.
+18. [+] Details need to add search option like ID search and Name search. That can do with overloading.
 19. [+] Remove item sql problems and inheritance problems solved.
 20. [+] Bill Report class problems solved. Added sum functions. And added new validations.
 21. [+] All input have to validate.
