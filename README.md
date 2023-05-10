@@ -29,6 +29,13 @@ grant NOLOGIN, NOCREATEROLE, NOSUPERUSER on database "supermarket" to employee;
 create database Supermarket owner employee;
 ```
 
+```
+# to adapt to my local dev environment
+CREATE USER employee WITH PASSWORD 'test';
+create database Supermarket owner employee;
+GRANT ALL PRIVILEGES ON DATABASE "supermarket" to employee;
+```
+
 
 You can compile right now. I used c++2a standarts. The g++/gcc should be up version of 8:
 
